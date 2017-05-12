@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.johanneswolfgruber.learntolisten">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_hearing_black_48dp"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_hearing_black_48dp"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainMenuActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GameActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".TutorialActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".GamesoundsActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

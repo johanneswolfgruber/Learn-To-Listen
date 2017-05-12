@@ -1,0 +1,108 @@
+package com.johanneswolfgruber.learntolisten;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.speech.tts.TextToSpeech;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Locale;
+
+public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
+
+    //Define Buttons, IDs, TextToSpeech, Animation
+    private Button mNewGameButton, mTutorialButton, mGamesoundsButton;
+    private TextToSpeech mTTS;
+    private Animation mAnimationBlendIn;
+    private TextView mHigh;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_menu);
+
+        //Initialize Buttons, TextToSpeech, Animation
+        //set OnClickListeners for Buttons
+        mTTS = new TextToSpeech(this, this);
+        mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
+        mHigh = (TextView) findViewById(R.id.highscore_text_view);
+
+        mNewGameButton = (Button) findViewById(R.id.new_game_button);
+        mNewGameButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    //start GameActivity.java
+                    Intent newGameIntent = new Intent(MainMenuActivity.this,
+                            GameActivity.class);
+                    startActivityForResult(newGameIntent, 1);
+            }
+        });
+
+        mTutorialButton = (Button) findViewById(R.id.tutorial_button);
+        mTutorialButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    //start TutorialActivity.java
+                    Intent tutorialIntent = new Intent(MainMenuActivity.this,
+                            TutorialActivity.class);
+                    startActivity(tutorialIntent);
+            }
+        });
+
+        mGamesoundsButton = (Button) findViewById(R.id.gamesounds_button);
+        mGamesoundsButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    //start GamesoundsActivity.java
+                    Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
+                            GamesoundsActivity.class);
+                    startActivity(gamesoundsIntent);
+            }
+        });
+    }
+
+
+
+    @Override
+    public void onInit(int status) {
+        mTTS.setLanguage(Locale.US);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        View v = findViewById(R.id.root_constraint_layout_main_menu);
+        v.startAnimation(mAnimationBlendIn);
+        mHigh.setText(String.format(Locale.getDefault(), "%d", readHighscore()));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 1) {
+            if(resultCode > readHighscore()) {
+                writeHighscore(resultCode);
+            }
+        }
+    }
+
+    private void writeHighscore(int highscore) {
+        SharedPreferences sharedPref = getSharedPreferences("com.johanneswolfgruber.learntolisten",
+                        Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.highscore), highscore);
+        editor.apply();
+    }
+
+    private int readHighscore() {
+        SharedPreferences sharedPref = getSharedPreferences("com.johanneswolfgruber.learntolisten",
+                        Context.MODE_PRIVATE);
+        return sharedPref.getInt(getString(R.string.highscore), 0);
+    }
+}

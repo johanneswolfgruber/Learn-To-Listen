@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Learn To Listen</string>
+    <string name="time_up_string">Time is up!</string>
+    <string name="highscore">HIGHSCORE</string>
+</resources>
