@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -586,6 +587,13 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
                     winnerDialog.setContentView(R.layout.winning);
                     winnerDialog.show();
+                    Button mMainButton = (Button) winnerDialog.findViewById(R.id.main_menu_button);
+                    mMainButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            finish();
+                        }
+                    });
                 }
 
                 /*
