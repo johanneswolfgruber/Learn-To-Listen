@@ -20,6 +20,10 @@ class Level {
         }
     }
 
+    void setCurrentFieldValue(int index){
+        mLevel[index] = "EMPTY";
+    }
+
     int numberOfFieldsPerRow(){
         return 9;
     }

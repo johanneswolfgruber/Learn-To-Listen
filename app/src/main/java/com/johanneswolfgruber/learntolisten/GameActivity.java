@@ -16,7 +16,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +29,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             mLeftClickable = false, mRightClickable = true;
     //private int mUpButtonID = 0, mDownButtonID = 0, mLeftButtonID = 0, mRightButtonID = 0;
     private int index = 0;
+    private int mClickID = 0;
     private TextToSpeech mTTS;
     private Animation mAnimationBlendIn;
     private Animation mAnimationRotate;
@@ -69,6 +69,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         initWidgets();
         initTimer();
         index = 0;
+        mClickID = 0;
 
         mLevel.setLevelIndex(level);
 
@@ -378,13 +379,18 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
+                mClickID = 0;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
-                        mSound.getSoundPool().play(mRandHighLow, 1.0f,1.0f, 0, 0, 1);
-                        DialogFragment mDialog = new HigherLowerDialogFragment();
-                        mDialog.show(getFragmentManager(), "DialogFragment");
+                        if(mClickID == 0) {
+                            mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
+                            mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
+                            DialogFragment mDialog = new HigherLowerDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mLevel.setCurrentFieldValue(index);
+                            mClickID = 1;
+                        }
                     }
                 });
                 mLeftClickable = true;
@@ -402,13 +408,18 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
+                mClickID = 0;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRandInterval = intervalIDs[randNumber(intervalIDs.length)];
-                        mSound.playSound(mRandInterval);
-                        DialogFragment mDialog = new IntervalDialogFragment();
-                        mDialog.show(getFragmentManager(), "DialogFragment");
+                        if(mClickID == 0) {
+                            mRandInterval = intervalIDs[randNumber(intervalIDs.length)];
+                            mSound.playSound(mRandInterval);
+                            DialogFragment mDialog = new IntervalDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mLevel.setCurrentFieldValue(index);
+                            mClickID = 1;
+                        }
                     }
                 });
                 mLeftClickable = true;
@@ -426,13 +437,18 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
+                mClickID = 0;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
-                        mSound.getSoundPool().play(mRandInversion, 1.0f,1.0f, 0, 0, 1);
-                        DialogFragment mDialog = new InversionsDialogFragment();
-                        mDialog.show(getFragmentManager(), "DialogFragment");
+                        if(mClickID == 0) {
+                            mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
+                            mSound.getSoundPool().play(mRandInversion, 1.0f, 1.0f, 0, 0, 1);
+                            DialogFragment mDialog = new InversionsDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mLevel.setCurrentFieldValue(index);
+                            mClickID = 1;
+                        }
                     }
                 });
                 mLeftClickable = true;
@@ -450,14 +466,19 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
+                mClickID = 0;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRandIntervalHighLow =
-                                intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
-                        mSound.getSoundPool().play(mRandIntervalHighLow, 1.0f,1.0f, 0, 0, 1);
-                        DialogFragment mDialog = new IntervalHigherLowerDialogFragment();
-                        mDialog.show(getFragmentManager(), "DialogFragment");
+                        if(mClickID == 0) {
+                            mRandIntervalHighLow =
+                                    intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
+                            mSound.getSoundPool().play(mRandIntervalHighLow, 1.0f, 1.0f, 0, 0, 1);
+                            DialogFragment mDialog = new IntervalHigherLowerDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mLevel.setCurrentFieldValue(index);
+                            mClickID = 1;
+                        }
                     }
                 });
                 mLeftClickable = true;
@@ -475,13 +496,18 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
+                mClickID = 0;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
-                        mSound.getSoundPool().play(mRandMajorMinor, 1.0f,1.0f, 0, 0, 1);
-                        DialogFragment mDialog = new MajorMinorDialogFragment();
-                        mDialog.show(getFragmentManager(), "DialogFragment");
+                        if(mClickID == 0) {
+                            mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
+                            mSound.getSoundPool().play(mRandMajorMinor, 1.0f, 1.0f, 0, 0, 1);
+                            DialogFragment mDialog = new MajorMinorDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mLevel.setCurrentFieldValue(index);
+                            mClickID = 1;
+                        }
                     }
                 });
                 mLeftClickable = true;
@@ -572,12 +598,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mUpButton2.setAlpha(.2f);
                 mDownButton2.setAlpha(.2f);
                 mVibrator.vibrate(500);
-                /*Toast mToast = Toast.makeText(GameActivity.this, String.format(Locale.getDefault(),
-                        "Level %d finished!", mLevelID), Toast.LENGTH_SHORT);
-                LinearLayout mToastLayout = (LinearLayout) mToast.getView();
-                TextView mToastTextView = (TextView) mToastLayout.getChildAt(0);
-                mToastTextView.setTextSize(30);
-                mToast.show();*/
                 mLevelID += 1;
                 if (mLevelID < 3) {
                     mNextLevelDialog = new Dialog(GameActivity.this,

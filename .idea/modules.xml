@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LearnToListen.iml" filepath="$PROJECT_DIR$/LearnToListen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn-to-listen.iml" filepath="$PROJECT_DIR$/learn-to-listen.iml" />
     </modules>
