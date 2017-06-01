@@ -3,8 +3,6 @@ package com.johanneswolfgruber.learntolisten;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
@@ -39,6 +37,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private CountDownTimer mTimer;
     private TextView mTimeRemainingTextView, mScoreTextView;
     private Dialog mGameOverDialog;
+    private Dialog mNextLevelDialog;
     private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor;
     private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs;
     private int mPoints = 0;
@@ -573,15 +572,35 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mUpButton2.setAlpha(.2f);
                 mDownButton2.setAlpha(.2f);
                 mVibrator.vibrate(500);
-                Toast mToast = Toast.makeText(GameActivity.this, String.format(Locale.getDefault(),
+                /*Toast mToast = Toast.makeText(GameActivity.this, String.format(Locale.getDefault(),
                         "Level %d finished!", mLevelID), Toast.LENGTH_SHORT);
                 LinearLayout mToastLayout = (LinearLayout) mToast.getView();
                 TextView mToastTextView = (TextView) mToastLayout.getChildAt(0);
                 mToastTextView.setTextSize(30);
-                mToast.show();
+                mToast.show();*/
                 mLevelID += 1;
                 if (mLevelID < 3) {
-                    startLevel(mLevelID);
+                    mNextLevelDialog = new Dialog(GameActivity.this,
+                            android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+                    mNextLevelDialog.setContentView(R.layout.level_dialog);
+                    mNextLevelDialog.show();
+                    Button mMainButton3 = (Button) mNextLevelDialog.
+                            findViewById(R.id.main_menu_button3);
+                    Button mNextLevelButton = (Button) mNextLevelDialog.
+                            findViewById(R.id.next_level_button);
+                    mMainButton3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            finish();
+                        }
+                    });
+                    mNextLevelButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startLevel(mLevelID);
+                            mNextLevelDialog.dismiss();
+                        }
+                    });
                 } else {
                     Dialog winnerDialog = new Dialog(GameActivity.this,
                             android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
