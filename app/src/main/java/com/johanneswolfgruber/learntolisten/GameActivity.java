@@ -595,28 +595,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     });
                 }
-
-                /*
-                Dialog winnerDialog = new Dialog(GameActivity.this,
-                        android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
-                winnerDialog.setContentView(R.layout.winning);
-                winnerDialog.show();
-                winnerDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        //Next Level
-                        //mLevelID += 1;
-                        //startLevel(mLevelID);
-
-
-
-
-                        Intent mWinnerIntent = new Intent(GameActivity.this,
-                                MainMenuActivity.class);
-                        startActivity(mWinnerIntent);
-
-                    }
-                });*/
                 break;
         }
     }
@@ -656,7 +634,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     }
 
     private void initTimer(){
-        mTimer = new CountDownTimer(90000, 1000) {
+        mTimer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeRemainingTextView.setText(String.format(Locale.getDefault(),
@@ -665,17 +643,17 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
             @Override
             public void onFinish() {
+                setResult(mPoints);
                 mTimeRemainingTextView.setText(R.string.time_up_string);
                 mGameOverDialog = new Dialog(GameActivity.this,
                         android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
                 mGameOverDialog.setContentView(R.layout.gameover);
                 mGameOverDialog.show();
-                mGameOverDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                Button mMainButton2 = (Button) mGameOverDialog.findViewById(R.id.main_menu_button2);
+                mMainButton2.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onCancel(DialogInterface dialog) {
-                        Intent mGameOverIntent = new Intent(GameActivity.this,
-                                MainMenuActivity.class);
-                        startActivity(mGameOverIntent);
+                    public void onClick(View v) {
+                        finish();
                     }
                 });
             }

@@ -14,7 +14,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="64dp"
         android:text="YOU WON!"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@android:color/black"
         android:textSize="80sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
