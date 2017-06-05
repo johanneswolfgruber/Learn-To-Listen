@@ -673,7 +673,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     }
 
     private void initTimer(){
-        mTimer = new CountDownTimer(60000, 1000) {
+        mTimer = new CountDownTimer(mLevel.getLevelTime(mLevelID), 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 mTimeRemainingTextView.setText(String.format(Locale.getDefault(),

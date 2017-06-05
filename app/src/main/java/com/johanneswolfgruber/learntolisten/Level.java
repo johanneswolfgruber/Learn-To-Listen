@@ -8,6 +8,7 @@ class Level {
             "LEFT_W", "INT_HIGH_LOW", "EMPTY", "INTERVAL", "INVERSION", "HIGH_LOW", "MAJOR_MINOR", "EMPTY", "FINISH"  };
     */
     private String[] mLevel;
+    private int levelTime;
 
     void setLevelIndex(int level) {
         switch (level) {
@@ -18,6 +19,18 @@ class Level {
                 mLevel = LevelTwo.getLevelTwo();
                 break;
         }
+    }
+
+    int getLevelTime(int level) {
+        switch (level) {
+            case 1:
+                levelTime = LevelOne.getLevelTime();
+                return levelTime;
+            case 2:
+                levelTime = LevelTwo.getLevelTime();
+                return levelTime;
+        }
+        return 0;
     }
 
     void setCurrentFieldValue(int index){
