@@ -9,4 +9,10 @@
         <item name="android:colorBackground">@color/colorBackground</item>
     </style>
 
+    <style name="DialogTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen" >
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorBackground</item>
+    </style>
+
 </resources>

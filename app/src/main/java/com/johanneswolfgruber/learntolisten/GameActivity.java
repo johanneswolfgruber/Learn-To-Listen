@@ -844,7 +844,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mLevelID += 1;
                 if (mLevelID < 3) {
                     mNextLevelDialog = new Dialog(GameActivity.this,
-                            android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+                            R.style.DialogTheme);
                     mNextLevelDialog.setContentView(R.layout.level_dialog);
                     mNextLevelDialog.show();
                     Button mMainButton3 = (Button) mNextLevelDialog.
@@ -866,7 +866,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     });
                 } else {
                     Dialog winnerDialog = new Dialog(GameActivity.this,
-                            android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+                            R.style.DialogTheme);
                     winnerDialog.setContentView(R.layout.winning);
                     winnerDialog.show();
                     Button mMainButton = (Button) winnerDialog.findViewById(R.id.main_menu_button);
@@ -928,7 +928,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 setResult(mPoints);
                 mTimeRemainingTextView.setText(R.string.time_up_string);
                 mGameOverDialog = new Dialog(GameActivity.this,
-                        android.R.style.Theme_Translucent_NoTitleBar_Fullscreen);
+                        R.style.DialogTheme);
                 mGameOverDialog.setContentView(R.layout.gameover);
                 mGameOverDialog.show();
                 Button mMainButton2 = (Button) mGameOverDialog.findViewById(R.id.main_menu_button2);
