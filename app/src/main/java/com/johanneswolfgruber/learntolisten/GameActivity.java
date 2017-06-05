@@ -364,16 +364,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                mLeftClickable = false;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(.2f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = false;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(.2f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = false;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(.2f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = false;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(.2f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "HIGH_LOW":
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
@@ -393,16 +420,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "INTERVAL":
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
@@ -422,16 +476,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "INVERSION":
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
@@ -451,16 +532,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "INT_HIGH_LOW":
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
@@ -481,16 +589,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "MAJOR_MINOR":
                 mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
@@ -510,16 +645,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "LADDER":
                 mTTS.speak("LADDER", TextToSpeech.QUEUE_FLUSH, null);
@@ -529,16 +691,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = true;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(1.0f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(1.0f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = true;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(1.0f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(1.0f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = true;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(1.0f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(1.0f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = true;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(1.0f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(1.0f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "RIGHT_W":
                 mSound.getSoundPool().play(mSound.getSoundIDWall(), 0.0f, 1.0f, 0, 0, 1);
@@ -547,16 +736,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = false;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(.2f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = false;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(.2f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = false;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(.2f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = false;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(.2f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "EMPTY":
                 mIcon.setOnClickListener(new View.OnClickListener() {
@@ -564,16 +780,43 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                mLeftClickable = true;
-                mRightClickable = true;
-                mUpClickable = false;
-                mDownClickable = false;
-                mLeftButton.setAlpha(1.0f);
-                mRightButton.setAlpha(1.0f);
-                mUpButton.setAlpha(.2f);
-                mDownButton.setAlpha(.2f);
-                mUpButton2.setAlpha(.2f);
-                mDownButton2.setAlpha(.2f);
+                if(index > mLevel.numberOfFieldsPerRow()) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(index - mLevel.numberOfFieldsPerRow()),
+                            "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
                 break;
             case "FINISH":
                 mIcon.setOnClickListener(new View.OnClickListener() {
