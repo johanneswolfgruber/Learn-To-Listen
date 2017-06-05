@@ -61,10 +61,12 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         initSoundIDs();
         mLevel = new Level();
         startLevel(mLevelID);
+
     }
 
     private void startLevel(int level) {
         //Methods for Initializing
+        setTitle(String.format(Locale.getDefault(), "Level %d", mLevelID));
         initAnimations();
         initWidgets();
         initTimer();
@@ -847,6 +849,13 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             R.style.DialogTheme);
                     mNextLevelDialog.setContentView(R.layout.level_dialog);
                     mNextLevelDialog.show();
+                    TextView mLevelNumber = (TextView) mNextLevelDialog.
+                            findViewById(R.id.level_finished_text_view);
+                    mLevelNumber.setText(String.format(Locale.getDefault(), "LEVEL %d FINISHED!",
+                            mLevelID-1));
+                    TextView mCurrentScore = (TextView) mNextLevelDialog.
+                            findViewById(R.id.current_level_score);
+                    mCurrentScore.setText(String.format(Locale.getDefault(), "Score: %d", mPoints));
                     Button mMainButton3 = (Button) mNextLevelDialog.
                             findViewById(R.id.main_menu_button3);
                     Button mNextLevelButton = (Button) mNextLevelDialog.
@@ -869,6 +878,9 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             R.style.DialogTheme);
                     winnerDialog.setContentView(R.layout.winning);
                     winnerDialog.show();
+                    TextView mFinishScore = (TextView) winnerDialog.
+                            findViewById(R.id.finished_score);
+                    mFinishScore.setText(String.format(Locale.getDefault(), "Score: %d", mPoints));
                     Button mMainButton = (Button) winnerDialog.findViewById(R.id.main_menu_button);
                     mMainButton.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -931,6 +943,9 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         R.style.DialogTheme);
                 mGameOverDialog.setContentView(R.layout.gameover);
                 mGameOverDialog.show();
+                TextView mGameOverScore = (TextView) mGameOverDialog.
+                        findViewById(R.id.gameover_score);
+                mGameOverScore.setText(String.format(Locale.getDefault(), "Score: %d", mPoints));
                 Button mMainButton2 = (Button) mGameOverDialog.findViewById(R.id.main_menu_button2);
                 mMainButton2.setOnClickListener(new View.OnClickListener() {
                     @Override
