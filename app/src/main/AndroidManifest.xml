@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity"
-            android:screenOrientation="sensorLandscape"/>
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppThemeNoTitle"/>
         <activity android:name=".TutorialActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".GamesoundsActivity"

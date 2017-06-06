@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class IntervalHigherLowerDialogFragment extends DialogFragment {
 
     private String[] mAnswers = {"Bigger", "Smaller"};
-    private static Object checkedItem;
+    private static Object sCheckedItem;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -26,9 +26,9 @@ public class IntervalHigherLowerDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ListView mListView = ((AlertDialog)dialog).getListView();
-                        checkedItem = mListView.getAdapter().getItem(mListView
+                        sCheckedItem = mListView.getAdapter().getItem(mListView
                                 .getCheckedItemPosition());
-                        String answer = (String) checkedItem;
+                        String answer = (String) sCheckedItem;
                         GameActivity callingActivity = (GameActivity) getActivity();
                         callingActivity.onUserSelectValue(answer);
                         dialog.dismiss();
@@ -45,6 +45,6 @@ public class IntervalHigherLowerDialogFragment extends DialogFragment {
     }
 
     public static String getAnswer(){
-        return (String) checkedItem;
+        return (String) sCheckedItem;
     }
 }
