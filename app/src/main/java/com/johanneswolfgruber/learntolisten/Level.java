@@ -3,7 +3,6 @@ package com.johanneswolfgruber.learntolisten;
 
 class Level {
     private String[] mLevel;
-    private int mLevelTime;
 
     void setLevelIndex(int level) {
         switch (level) {
@@ -19,7 +18,7 @@ class Level {
     int getLevelTime(int level) {
         switch (level) {
             case 1:
-                mLevelTime = LevelOne.getLevelTime();
+                int mLevelTime = LevelOne.getLevelTime();
                 return mLevelTime;
             case 2:
                 mLevelTime = LevelTwo.getLevelTime();

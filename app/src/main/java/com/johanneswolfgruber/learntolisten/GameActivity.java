@@ -35,8 +35,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private ImageView mIcon;
     private CountDownTimer mTimer;
     private TextView mTimeRemainingTextView, mScoreTextView, mLevelTextView;
-    private Dialog mGameOverDialog;
-    private Dialog mNextLevelDialog;
+    private Dialog mGameOverDialog, mNextLevelDialog;
     private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor;
     private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs;
     private static String[] sLevelOne, sLevelTwo;
@@ -962,7 +961,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         mRightClickable = true;
 
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        //mDecorView = getWindow().getDecorView();
     }
 
     private void initTimer(){
