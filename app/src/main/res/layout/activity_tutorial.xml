@@ -17,7 +17,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:padding="16dp"
-        android:text="Tutorial Text Placeholder"
+        android:text="@string/tutorial_text_string"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.437"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content">
 
@@ -10,14 +11,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/root_constraint_layout_gamesounds"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorBackground">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout_sound1"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -28,7 +28,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -36,17 +35,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Steps"
+                android:text="@string/steps_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton"
@@ -57,7 +56,6 @@
             android:id="@+id/constraintLayout_sound2"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -68,7 +66,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -76,17 +73,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Exercise Field"
+                android:text="@string/exercise_field_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton2"
@@ -97,7 +94,6 @@
             android:id="@+id/constraintLayout_sound3"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -108,7 +104,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -116,17 +111,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Right Answer"
+                android:text="@string/right_answer_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton3"
@@ -137,7 +132,6 @@
             android:id="@+id/constraintLayout_sound4"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -148,7 +142,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -156,17 +149,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Wrong Answer"
+                android:text="@string/wrong_answer_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton4"
@@ -177,7 +170,6 @@
             android:id="@+id/constraintLayout_sound5"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -188,7 +180,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -196,17 +187,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Hitting a Wall"
+                android:text="@string/hitting_a_wall_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton5"
@@ -217,7 +208,6 @@
             android:id="@+id/constraintLayout_sound6"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -228,7 +218,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -236,17 +225,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Ladder Up"
+                android:text="@string/ladder_up_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton6"
@@ -257,7 +246,6 @@
             android:id="@+id/constraintLayout_sound7"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -268,7 +256,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -276,17 +263,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Ladder Down"
+                android:text="@string/ladder_down_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton7"
@@ -297,7 +284,6 @@
             android:id="@+id/constraintLayout_sound8"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -308,7 +294,6 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
@@ -316,17 +301,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp" />
+                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="24dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                android:text="Door"
+                android:text="@string/door_text"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton8"

@@ -2,6 +2,28 @@
     <string name="app_name">Learn To Listen</string>
     <string name="time_up_string">Time is up!</string>
     <string name="highscore">HIGHSCORE</string>
+    <string name="current_level_text">Level</string>
+    <string name="points_text">Points</string>
+    <string name="time_text">Time</string>
+    <string name="steps_text">Steps</string>
+    <string name="exercise_field_text">Exercise Field</string>
+    <string name="right_answer_text">Right Answer</string>
+    <string name="wrong_answer_text">Wrong Answer</string>
+    <string name="hitting_a_wall_text">Hitting a Wall</string>
+    <string name="ladder_up_text">Ladder Up</string>
+    <string name="ladder_down_text">Ladder Down</string>
+    <string name="door_text">Door</string>
+    <string name="new_game_text">New Game</string>
+    <string name="tutorial_text">Tutorial</string>
+    <string name="gamesounds_text">Gamesounds</string>
+    <string name="highscore_text">Highscore</string>
+    <string name="tutorial_text_string">Tutorial Text Placeholder</string>
+    <string name="game_over_text">GAME OVER!</string>
+    <string name="score_text">Score:</string>
+    <string name="main_menu_text">Main Menu</string>
+    <string name="level_finished_text">LEVEL FINISHED!</string>
+    <string name="next_level_text">Next Level</string>
+    <string name="you_won_text">YOU WON!</string>
     <string-array name="LEVEL_ONE">
         <item>LEFT_W</item>
         <item>HIGH_LOW</item>
