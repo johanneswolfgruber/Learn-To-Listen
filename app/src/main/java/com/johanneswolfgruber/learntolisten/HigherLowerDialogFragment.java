@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ListView;
 
 public class HigherLowerDialogFragment extends DialogFragment {
@@ -44,10 +45,11 @@ public class HigherLowerDialogFragment extends DialogFragment {
                         sCheckedItem = null;
                     }
                 });
-
-        return builder.create();
+        AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+        return alertDialog;
     }
-
+    /*
     @Override
     public void onStart() {
         super.onStart();
@@ -55,9 +57,9 @@ public class HigherLowerDialogFragment extends DialogFragment {
         if (dialog != null) {
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT);
-            //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GRAY));
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         }
-    }
+    }*/
 
     public static String getAnswer(){
         return (String) sCheckedItem;

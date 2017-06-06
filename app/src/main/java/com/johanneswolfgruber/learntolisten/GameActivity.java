@@ -9,6 +9,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -44,14 +45,15 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private Sound mSound;
     private Vibrator mVibrator;
     private Level mLevel;
-    private View mDecorView;
+    //private View mDecorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
         setContentView(R.layout.activity_game);
 
         mTTS = new TextToSpeech(this, this);
@@ -67,13 +69,11 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        if(hasFocus) {
-            hideBars();
-        }
+        hideBars();
     }
 
     private void hideBars() {
-        mDecorView.setSystemUiVisibility(
+        getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -92,8 +92,9 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     }
 
     private void startLevel(int level) {
+        hideBars();
         //Methods for Initializing
-        setTitle(String.format(Locale.getDefault(), "Level %d", mLevelID));
+        //setTitle(String.format(Locale.getDefault(), "Level %d", mLevelID));
 
         sLevelOne = getResources().getStringArray(R.array.LEVEL_ONE);
         sLevelTwo = getResources().getStringArray(R.array.LEVEL_TWO);
@@ -101,7 +102,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         initAnimations();
         initWidgets();
         initTimer();
-        hideBars();
 
         mLevelTextView.setText(String.format(Locale.getDefault(), "Level %d", mLevelID));
         mIndex = 0;
@@ -882,6 +882,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mNextLevelDialog = new Dialog(GameActivity.this,
                             R.style.DialogTheme);
                     mNextLevelDialog.setContentView(R.layout.level_dialog);
+                    mNextLevelDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                     mNextLevelDialog.show();
                     TextView mLevelNumber = (TextView) mNextLevelDialog.
                             findViewById(R.id.level_finished_text_view);
@@ -911,6 +912,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     Dialog mWinnerDialog = new Dialog(GameActivity.this,
                             R.style.DialogTheme);
                     mWinnerDialog.setContentView(R.layout.winning);
+                    mWinnerDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                     mWinnerDialog.show();
                     TextView mFinishScore = (TextView) mWinnerDialog.
                             findViewById(R.id.finished_score);
@@ -960,7 +962,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         mRightClickable = true;
 
         mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        mDecorView = getWindow().getDecorView();
+        //mDecorView = getWindow().getDecorView();
     }
 
     private void initTimer(){
@@ -978,6 +980,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mGameOverDialog = new Dialog(GameActivity.this,
                         R.style.DialogTheme);
                 mGameOverDialog.setContentView(R.layout.gameover);
+                mGameOverDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                 mGameOverDialog.show();
                 TextView mGameOverScore = (TextView) mGameOverDialog.
                         findViewById(R.id.gameover_score);
