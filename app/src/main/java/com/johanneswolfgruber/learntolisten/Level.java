@@ -13,10 +13,10 @@ class Level {
     void setLevelIndex(int level) {
         switch (level) {
             case 1:
-                mLevel = LevelOne.getLevelOne();
+                mLevel = GameActivity.getLevelOne();
                 break;
             case 2:
-                mLevel = LevelTwo.getLevelTwo();
+                mLevel = GameActivity.getLevelTwo();
                 break;
         }
     }

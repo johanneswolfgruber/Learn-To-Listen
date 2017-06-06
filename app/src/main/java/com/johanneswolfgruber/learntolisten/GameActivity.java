@@ -38,6 +38,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private Dialog mNextLevelDialog;
     private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor;
     private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs;
+    private static String[] sLevelOne, sLevelTwo;
     private int mPoints = 0;
     private int mLevelID = 1;
     private Sound mSound;
@@ -82,9 +83,20 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     }
 
 
+    static String[] getLevelOne() {
+        return sLevelOne;
+    }
+
+    static String[] getLevelTwo() {
+        return sLevelTwo;
+    }
+
     private void startLevel(int level) {
         //Methods for Initializing
         setTitle(String.format(Locale.getDefault(), "Level %d", mLevelID));
+
+        sLevelOne = getResources().getStringArray(R.array.LEVEL_ONE);
+        sLevelTwo = getResources().getStringArray(R.array.LEVEL_TWO);
 
         initAnimations();
         initWidgets();

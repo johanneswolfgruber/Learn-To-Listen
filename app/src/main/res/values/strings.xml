@@ -2,4 +2,62 @@
     <string name="app_name">Learn To Listen</string>
     <string name="time_up_string">Time is up!</string>
     <string name="highscore">HIGHSCORE</string>
+    <string-array name="LEVEL_ONE">
+        <item>LEFT_W</item>
+        <item>HIGH_LOW</item>
+        <item>EMPTY</item>
+        <item>INTERVAL</item>
+        <item>INVERSION</item>
+        <item>EMPTY</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>HIGH_LOW</item>
+        <item>INVERSION</item>
+        <item>EMPTY</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>INT_HIGH_LOW</item>
+        <item>EMPTY</item>
+        <item>INTERVAL</item>
+        <item>INVERSION</item>
+        <item>HIGH_LOW</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>FINISH</item>
+    </string-array>
+    <string-array name="LEVEL_TWO">
+        <item>LEFT_W</item>
+        <item>EMPTY</item>
+        <item>EMPTY</item>
+        <item>EMPTY</item>
+        <item>INT_HIGH_LOW</item>
+        <item>HIGH_LOW</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>LADDER</item>
+        <item>MAJOR_MINOR</item>
+        <item>HIGH_LOW</item>
+        <item>INVERSION</item>
+        <item>EMPTY</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>INT_HIGH_LOW</item>
+        <item>EMPTY</item>
+        <item>INTERVAL</item>
+        <item>INVERSION</item>
+        <item>HIGH_LOW</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>FINISH</item>
+    </string-array>
 </resources>
