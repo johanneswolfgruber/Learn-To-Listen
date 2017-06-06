@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 public class HigherLowerDialogFragment extends DialogFragment {
@@ -43,6 +46,17 @@ public class HigherLowerDialogFragment extends DialogFragment {
                 });
 
         return builder.create();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT);
+            //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GRAY));
+        }
     }
 
     public static String getAnswer(){
