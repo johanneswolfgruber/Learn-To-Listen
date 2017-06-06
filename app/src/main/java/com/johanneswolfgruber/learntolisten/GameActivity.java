@@ -22,6 +22,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
+@SuppressWarnings("ConstantConditions")
 public class GameActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
     private ImageButton mUpButton, mDownButton, mUpButton2, mDownButton2, mLeftButton, mRightButton;
     private boolean mUpClickable = false, mDownClickable = false,
@@ -44,15 +45,12 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private Sound mSound;
     private Vibrator mVibrator;
     private Level mLevel;
-    //private View mDecorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
         setContentView(R.layout.activity_game);
 
         mTTS = new TextToSpeech(this, this);

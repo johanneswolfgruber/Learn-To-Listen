@@ -4,13 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ListView;
 
+@SuppressWarnings("ConstantConditions")
 public class InversionsDialogFragment extends DialogFragment {
 
     private String[] mAnswers = {"Common chord", "First inversion", "Second inversion"};
@@ -59,8 +57,8 @@ public class InversionsDialogFragment extends DialogFragment {
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         }
     }*/
-
+    /*
     public static String getAnswer(){
         return (String) sCheckedItem;
-    }
+    }*/
 }

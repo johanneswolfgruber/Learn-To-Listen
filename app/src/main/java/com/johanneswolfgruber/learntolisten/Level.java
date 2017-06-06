@@ -18,11 +18,9 @@ class Level {
     int getLevelTime(int level) {
         switch (level) {
             case 1:
-                int mLevelTime = LevelOne.getLevelTime();
-                return mLevelTime;
+                return LevelOne.getLevelTime();
             case 2:
-                mLevelTime = LevelTwo.getLevelTime();
-                return mLevelTime;
+                return LevelTwo.getLevelTime();
         }
         return 0;
     }
