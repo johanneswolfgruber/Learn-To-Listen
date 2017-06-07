@@ -110,7 +110,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             @Override
             public void onClick(View v) {
                 if(mUpClickable){
-                    mIndex += mLevel.numberOfFieldsPerRow();
+                    mIndex += mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
                     mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
@@ -127,7 +127,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             @Override
             public void onClick(View v) {
                 if(mDownClickable){
-                    mIndex -= mLevel.numberOfFieldsPerRow();
+                    mIndex -= mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
                     mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
@@ -144,7 +144,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             @Override
             public void onClick(View v) {
                 if(mUpClickable){
-                    mIndex += mLevel.numberOfFieldsPerRow();
+                    mIndex += mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
                     mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
@@ -161,7 +161,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             @Override
             public void onClick(View v) {
                 if(mDownClickable){
-                    mIndex -= mLevel.numberOfFieldsPerRow();
+                    mIndex -= mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
                     mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
@@ -397,8 +397,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = false;
                         mRightClickable = true;
@@ -453,8 +453,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -509,8 +509,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -565,8 +565,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -622,8 +622,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -678,8 +678,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -724,8 +724,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
@@ -769,8 +769,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = false;
@@ -813,8 +813,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     public void onClick(View v) {
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow()) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow()),
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
                             "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;

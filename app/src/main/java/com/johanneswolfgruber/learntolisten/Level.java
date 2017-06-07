@@ -18,9 +18,9 @@ class Level {
     int getLevelTime(int level) {
         switch (level) {
             case 1:
-                return LevelOne.getLevelTime();
+                return 45000;
             case 2:
-                return LevelTwo.getLevelTime();
+                return 60000;
         }
         return 0;
     }
@@ -29,8 +29,14 @@ class Level {
         mLevel[index] = "EMPTY";
     }
 
-    int numberOfFieldsPerRow(){
-        return 9;
+    int numberOfFieldsPerRow(int level){
+        switch (level) {
+            case 1:
+                return 9;
+            case 2:
+                return 9;
+        }
+        return 0;
     }
 
     String getCurrentFieldValue(int index){
