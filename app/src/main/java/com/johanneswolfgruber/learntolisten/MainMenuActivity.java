@@ -23,6 +23,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
     private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
+    private Sound mSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +36,18 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
         mAnimationBlinking = AnimationUtils.loadAnimation(this, R.anim.blinking);
         mHigh = (TextView) findViewById(R.id.highscore_text_view);
+        mSound = new Sound();
+        mSound.initSounds(this);
 
         mNewGameButton = (Button) findViewById(R.id.new_game_button);
         mNewGameButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //start GameActivity.java
-                    Intent newGameIntent = new Intent(MainMenuActivity.this,
-                            GameActivity.class);
-                    startActivityForResult(newGameIntent, 1);
+                mSound.playSound(mSound.getSoundIDnewgame());
+                //start GameActivity.java
+                Intent newGameIntent = new Intent(MainMenuActivity.this,
+                        GameActivity.class);
+                startActivityForResult(newGameIntent, 1);
             }
         });
 
@@ -51,10 +55,11 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         mTutorialButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //start TutorialActivity.java
-                    Intent tutorialIntent = new Intent(MainMenuActivity.this,
-                            TutorialActivity.class);
-                    startActivity(tutorialIntent);
+                mSound.playSound(mSound.getSoundIDbutton());
+                //start TutorialActivity.java
+                Intent tutorialIntent = new Intent(MainMenuActivity.this,
+                        TutorialActivity.class);
+                startActivity(tutorialIntent);
             }
         });
 
@@ -62,10 +67,11 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         mGamesoundsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //start GamesoundsActivity.java
-                    Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
-                            GamesoundsActivity.class);
-                    startActivity(gamesoundsIntent);
+                mSound.playSound(mSound.getSoundIDbutton());
+                //start GamesoundsActivity.java
+                Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
+                        GamesoundsActivity.class);
+                startActivity(gamesoundsIntent);
             }
         });
 
@@ -73,6 +79,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         mResetHighscoreButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSound.playSound(mSound.getSoundIDbutton());
                 DialogFragment mDialog = new ResetHighscore();
                 mDialog.show(getFragmentManager(), "DialogFragment");
             }

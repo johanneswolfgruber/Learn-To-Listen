@@ -113,7 +113,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex += mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                     mDownClickable = true;
@@ -130,7 +130,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex -= mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                     mUpClickable = true;
@@ -147,7 +147,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex += mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                     mDownClickable = true;
@@ -164,7 +164,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex -= mLevel.numberOfFieldsPerRow(mLevelID);
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                     mUpClickable = true;
@@ -181,7 +181,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex--;
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                 }
@@ -195,7 +195,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mIndex++;
                     //Toast mToast = Toast.makeText(GameActivity.this, ""+mIndex, Toast.LENGTH_SHORT);
                     //mToast.show();
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps());
                     String mCurrentFieldValue = mLevel.getCurrentFieldValue(mIndex);
                     switchKey(mCurrentFieldValue);
                 }
@@ -438,7 +438,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "HIGH_LOW":
-                mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDExercise());
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -494,7 +494,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "INTERVAL":
-                mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDExercise());
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -550,7 +550,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "INVERSION":
-                mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDExercise());
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -606,7 +606,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "INT_HIGH_LOW":
-                mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDExercise());
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -663,7 +663,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "MAJOR_MINOR":
-                mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDExercise());
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -719,8 +719,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "LADDER":
-                mTTS.speak("LADDER", TextToSpeech.QUEUE_FLUSH, null);
-                //Sound.getSoundPool().play(Sound.getSoundIDLadder(), 1.0f, 1.0f, 0, 0, 1);
+                //mTTS.speak("LADDER", TextToSpeech.QUEUE_FLUSH, null);
+                mSound.playSound(mSound.getSoundIDLadder());
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -860,6 +860,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 mTimer.cancel();
+                mSound.playSound(mSound.getSoundIDlevelfinish());
                 String mRemainingTime = mTimeRemainingTextView.getText().toString();
                 int mRemainingTimeBonusPoints = Integer.parseInt(mRemainingTime)*10;
                 mPoints += mRemainingTimeBonusPoints;
@@ -898,12 +899,14 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mMainButton3.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            mSound.playSound(mSound.getSoundIDbutton());
                             finish();
                         }
                     });
                     mNextLevelButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            mSound.playSound(mSound.getSoundIDbutton());
                             startLevel(mLevelID);
                             mNextLevelDialog.dismiss();
                         }
@@ -922,6 +925,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mMainButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            mSound.playSound(mSound.getSoundIDbutton());
                             finish();
                         }
                     });
@@ -976,7 +980,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             @Override
             public void onFinish() {
                 setResult(mPoints);
-                mTimeRemainingTextView.setText(R.string.time_up_string);
+                mSound.playSound(mSound.getSoundIDgameover());
+                //mTimeRemainingTextView.setText(R.string.time_up_string);
                 mGameOverDialog = new Dialog(GameActivity.this,
                         R.style.DialogTheme);
                 mGameOverDialog.setContentView(R.layout.gameover);

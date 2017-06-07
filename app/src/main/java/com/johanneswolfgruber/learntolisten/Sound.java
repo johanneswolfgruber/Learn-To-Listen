@@ -8,15 +8,17 @@ import android.os.Build;
 class Sound {
     private SoundPool mSoundPool;
     private int soundIDSteps, soundIDWall, soundIDExercise, soundIDLadder, soundIDDoor,
-            soundIDhigher1, soundIDhigher2, soundIDhigher3, soundIDlower1, soundIDlower2,
-            soundIDlower3, soundIDLadderDown, soundIDRightAnswer,
-            soundIDWrongAnswer, soundIDunison, soundIDminorSecond, soundIDmajorSecond,
-            soundIDminorThird, soundIDmajorThird, soundIDfourth, soundIDtritone, soundIDfifth,
-            soundIDminorSixth, soundIDmajorSixth, soundIDminorSeventh, soundIDmajorSeventh,
-            soundIDoctave, soundIDcommon_chord, soundIDfirst_inversion, soundIDsecond_inversion,
-            soundIDmajor1, soundIDminor1, soundIDdiminished1, soundIDaugmented1,
-            soundIDintervalHigher1, soundIDintervalHigher2, soundIDintervalHigher3,
-            soundIDintervalLower1, soundIDintervalLower2, soundIDintervalLower3;
+            soundIDLadderDown, soundIDhigher1, soundIDhigher2, soundIDhigher3, soundIDlower1,
+            soundIDlower2, soundIDlower3, soundIDRightAnswer, soundIDWrongAnswer, soundIDunison,
+            soundIDminorSecond, soundIDmajorSecond, soundIDminorThird, soundIDmajorThird,
+            soundIDfourth, soundIDtritone, soundIDfifth, soundIDminorSixth, soundIDmajorSixth,
+            soundIDminorSeventh, soundIDmajorSeventh, soundIDoctave, soundIDcommon_chord,
+            soundIDfirst_inversion, soundIDsecond_inversion, soundIDmajor1, soundIDminor1,
+            soundIDdiminished1, soundIDaugmented1, soundIDintervalHigher1, soundIDintervalHigher2,
+            soundIDintervalHigher3, soundIDintervalLower1, soundIDintervalLower2,
+            soundIDintervalLower3, soundIDgameover, soundIDlevelfinish, soundIDnewgame,
+            soundIDbutton;
+
 
     @SuppressWarnings("deprecation")
     void initSounds(Context context) {
@@ -29,14 +31,18 @@ class Sound {
             mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
         }
 
-        soundIDSteps = mSoundPool.load(context, R.raw.steps, 0);
-        soundIDWall = mSoundPool.load(context, R.raw.wall, 1);
-        soundIDDoor = mSoundPool.load(context, R.raw.door_knock, 1);
-        soundIDExercise = mSoundPool.load(context, R.raw.exercise, 1);
-        soundIDLadder = mSoundPool.load(context, R.raw.ladder_up, 1);
+        soundIDSteps = mSoundPool.load(context, R.raw.sfx_movement_footstepsloop4_slow_steps, 0);
+        soundIDWall = mSoundPool.load(context, R.raw.sfx_movement_dooropen2_wall, 0);
+        soundIDDoor = mSoundPool.load(context, R.raw.door_knock, 0);
+        soundIDExercise = mSoundPool.load(context, R.raw.sfx_alarm_loop6_exercise, 0);
+        soundIDLadder = mSoundPool.load(context, R.raw.sfx_movement_ladder1loop_ladder, 0);
         soundIDLadderDown = mSoundPool.load(context, R.raw.ladder_down, 0);
-        soundIDRightAnswer = mSoundPool.load(context, R.raw.right_answer, 0);
-        soundIDWrongAnswer = mSoundPool.load(context, R.raw.wrong_answer, 0);
+        soundIDRightAnswer = mSoundPool.load(context, R.raw.sfx_sounds_powerup3_right, 0);
+        soundIDWrongAnswer = mSoundPool.load(context, R.raw.sfx_sounds_error13_wrong, 0);
+        soundIDgameover = mSoundPool.load(context, R.raw.sfx_sounds_falling5_gameover, 0);
+        soundIDlevelfinish = mSoundPool.load(context, R.raw.sfx_sounds_fanfare1_level_finished, 0);
+        soundIDnewgame = mSoundPool.load(context, R.raw.sfx_menu_select1_new_game, 0);
+        soundIDbutton = mSoundPool.load(context, R.raw.sfx_menu_select2_click_button, 0);
         soundIDhigher1 = mSoundPool.load(context, R.raw.higher1_root_c3, 0);
         soundIDhigher2 = mSoundPool.load(context, R.raw.higher2_root_c3, 0);
         soundIDhigher3 = mSoundPool.load(context, R.raw.higher3_root_c3, 0);
@@ -75,8 +81,28 @@ class Sound {
         mSoundPool.play(soundID, 1.0f, 1.0f, 0, 0, 1);
     }
 
+    SoundPool getSoundPool() {
+        return mSoundPool;
+    }
+
     int getSoundIDSteps() {
         return soundIDSteps;
+    }
+
+    int getSoundIDgameover() {
+        return soundIDgameover;
+    }
+
+    int getSoundIDlevelfinish() {
+        return soundIDlevelfinish;
+    }
+
+    int getSoundIDnewgame() {
+        return soundIDnewgame;
+    }
+
+    int getSoundIDbutton() {
+        return soundIDbutton;
     }
 
     int getSoundIDWall() {
@@ -93,10 +119,6 @@ class Sound {
 
     int getSoundIDDoor() {
         return soundIDDoor;
-    }
-
-    SoundPool getSoundPool() {
-        return mSoundPool;
     }
 
     int getSoundIDhigher1() {
