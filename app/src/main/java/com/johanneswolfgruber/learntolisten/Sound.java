@@ -7,7 +7,7 @@ import android.os.Build;
 
 class Sound {
     private SoundPool mSoundPool;
-    private int soundIDSteps, soundIDWall, soundIDExercise, soundIDLadder, soundIDDoor,
+    private int soundIDSteps, soundIDwallLeft, soundIDExercise, soundIDLadder, soundIDDoor,
             soundIDLadderDown, soundIDhigher1, soundIDhigher2, soundIDhigher3, soundIDlower1,
             soundIDlower2, soundIDlower3, soundIDRightAnswer, soundIDWrongAnswer, soundIDunison,
             soundIDminorSecond, soundIDmajorSecond, soundIDminorThird, soundIDmajorThird,
@@ -17,7 +17,7 @@ class Sound {
             soundIDdiminished1, soundIDaugmented1, soundIDintervalHigher1, soundIDintervalHigher2,
             soundIDintervalHigher3, soundIDintervalLower1, soundIDintervalLower2,
             soundIDintervalLower3, soundIDgameover, soundIDlevelfinish, soundIDnewgame,
-            soundIDbutton;
+            soundIDbutton, soundIDwallRight;
 
 
     @SuppressWarnings("deprecation")
@@ -31,18 +31,19 @@ class Sound {
             mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
         }
 
-        soundIDSteps = mSoundPool.load(context, R.raw.sfx_movement_footstepsloop4_slow_steps, 0);
-        soundIDWall = mSoundPool.load(context, R.raw.sfx_movement_dooropen2_wall, 0);
-        soundIDDoor = mSoundPool.load(context, R.raw.door_knock, 0);
-        soundIDExercise = mSoundPool.load(context, R.raw.sfx_alarm_loop6_exercise, 0);
-        soundIDLadder = mSoundPool.load(context, R.raw.sfx_movement_ladder1loop_ladder, 0);
-        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder_down, 0);
-        soundIDRightAnswer = mSoundPool.load(context, R.raw.sfx_sounds_powerup3_right, 0);
-        soundIDWrongAnswer = mSoundPool.load(context, R.raw.sfx_sounds_error13_wrong, 0);
-        soundIDgameover = mSoundPool.load(context, R.raw.sfx_sounds_falling5_gameover, 0);
-        soundIDlevelfinish = mSoundPool.load(context, R.raw.sfx_sounds_fanfare1_level_finished, 0);
-        soundIDnewgame = mSoundPool.load(context, R.raw.sfx_menu_select1_new_game, 0);
-        soundIDbutton = mSoundPool.load(context, R.raw.sfx_menu_select2_click_button, 0);
+        soundIDSteps = mSoundPool.load(context, R.raw.steps, 0);
+        soundIDwallLeft = mSoundPool.load(context, R.raw.left_wall, 0);
+        soundIDwallRight = mSoundPool.load(context, R.raw.right_wall, 0);
+        soundIDDoor = mSoundPool.load(context, R.raw.door, 0);
+        soundIDExercise = mSoundPool.load(context, R.raw.exercise, 0);
+        soundIDLadder = mSoundPool.load(context, R.raw.ladder, 0);
+        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder, 0);
+        soundIDRightAnswer = mSoundPool.load(context, R.raw.right, 0);
+        soundIDWrongAnswer = mSoundPool.load(context, R.raw.wrong, 0);
+        soundIDgameover = mSoundPool.load(context, R.raw.gameover, 0);
+        soundIDlevelfinish = mSoundPool.load(context, R.raw.level_finished, 0);
+        soundIDnewgame = mSoundPool.load(context, R.raw.new_game, 0);
+        soundIDbutton = mSoundPool.load(context, R.raw.button, 0);
         soundIDhigher1 = mSoundPool.load(context, R.raw.higher1_root_c3, 0);
         soundIDhigher2 = mSoundPool.load(context, R.raw.higher2_root_c3, 0);
         soundIDhigher3 = mSoundPool.load(context, R.raw.higher3_root_c3, 0);
@@ -105,8 +106,12 @@ class Sound {
         return soundIDbutton;
     }
 
-    int getSoundIDWall() {
-        return soundIDWall;
+    int getSoundIDwallLeft() {
+        return soundIDwallLeft;
+    }
+
+    int getSoundIDwallRight() {
+        return soundIDwallRight;
     }
 
     int getSoundIDExercise() {

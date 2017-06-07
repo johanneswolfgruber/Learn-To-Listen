@@ -117,7 +117,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView5String, mButton5ID);
                 } else if(mButton5ID == 1) {
                     mButton5ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDWall(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.getSoundPool().play(mSound.getSoundIDwallLeft(), 1.0f, 1.0f, 0, 0, 1);
                 }
             }
         });

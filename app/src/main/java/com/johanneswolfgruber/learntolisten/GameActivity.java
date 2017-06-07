@@ -393,7 +393,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     public void switchKey(String currentFieldValue){
         switch (currentFieldValue) {
             case "LEFT_W":
-                mSound.getSoundPool().play(mSound.getSoundIDWall(), 1.0f, 0.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDwallLeft());
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -765,7 +765,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "RIGHT_W":
-                mSound.getSoundPool().play(mSound.getSoundIDWall(), 0.0f, 1.0f, 0, 0, 1);
+                mSound.playSound(mSound.getSoundIDwallRight());
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
