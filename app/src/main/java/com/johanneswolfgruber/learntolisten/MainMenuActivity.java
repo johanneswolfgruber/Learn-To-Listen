@@ -1,5 +1,6 @@
 package com.johanneswolfgruber.learntolisten;
 
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,9 +19,9 @@ import java.util.Locale;
 public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
 
     //Define Buttons, IDs, TextToSpeech, Animation
-    private Button mNewGameButton, mTutorialButton, mGamesoundsButton;
+    private Button mNewGameButton, mTutorialButton, mGamesoundsButton, mResetHighscoreButton;
     private TextToSpeech mTTS;
-    private Animation mAnimationBlendIn;
+    private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
 
     @Override
@@ -32,6 +33,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         //set OnClickListeners for Buttons
         mTTS = new TextToSpeech(this, this);
         mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
+        mAnimationBlinking = AnimationUtils.loadAnimation(this, R.anim.blinking);
         mHigh = (TextView) findViewById(R.id.highscore_text_view);
 
         mNewGameButton = (Button) findViewById(R.id.new_game_button);
@@ -66,9 +68,20 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
                     startActivity(gamesoundsIntent);
             }
         });
+
+        mResetHighscoreButton = (Button) findViewById(R.id.reset_highscore_button);
+        mResetHighscoreButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment mDialog = new ResetHighscore();
+                mDialog.show(getFragmentManager(), "DialogFragment");
+            }
+        });
     }
 
-
+    public void onUserPositiveClick() {
+        deleteHighscore();
+    }
 
     @Override
     public void onInit(int status) {
@@ -88,6 +101,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         if(requestCode == 1) {
             if(resultCode > readHighscore()) {
                 writeHighscore(resultCode);
+                mHigh.startAnimation(mAnimationBlinking);
             }
         }
     }
@@ -104,5 +118,14 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         SharedPreferences sharedPref = getSharedPreferences("com.johanneswolfgruber.learntolisten",
                         Context.MODE_PRIVATE);
         return sharedPref.getInt(getString(R.string.highscore), 0);
+    }
+
+    private void deleteHighscore() {
+        SharedPreferences sharedPref = getSharedPreferences("com.johanneswolfgruber.learntolisten",
+                Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove(getString(R.string.highscore));
+        editor.apply();
+        onResume();
     }
 }
