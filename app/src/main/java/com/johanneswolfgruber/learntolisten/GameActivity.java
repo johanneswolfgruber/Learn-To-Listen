@@ -367,14 +367,16 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     }
 
     private void testAnswerIntervalHigherLower(String answer) {
-        if(Objects.equals(answer, "Bigger") && (mRandIntervalHighLow == mSound.getSoundIDintervalHigher1() ||
+        if(Objects.equals(answer, "Bigger") && (
+                mRandIntervalHighLow == mSound.getSoundIDintervalHigher1() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalHigher2() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalHigher3())) {
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
-        } else if(Objects.equals(answer, "Smaller") && (mRandIntervalHighLow == mSound.getSoundIDintervalLower1() ||
+        } else if(Objects.equals(answer, "Smaller") && (
+                mRandIntervalHighLow == mSound.getSoundIDintervalLower1() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalLower2() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalLower3())) {
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
@@ -398,8 +400,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = false;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -454,8 +456,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -510,8 +512,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -566,8 +568,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -623,8 +625,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -679,8 +681,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -725,8 +727,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = true;
@@ -770,8 +772,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = false;
                         mUpClickable = false;
@@ -814,8 +816,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(mIndex - mLevel.numberOfFieldsPerRow(mLevelID)),
-                            "LADDER")) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
                         mLeftClickable = true;
                         mRightClickable = true;
                         mUpClickable = false;
@@ -879,7 +881,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mNextLevelDialog = new Dialog(GameActivity.this,
                             R.style.DialogTheme);
                     mNextLevelDialog.setContentView(R.layout.level_dialog);
-                    mNextLevelDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                    mNextLevelDialog.getWindow().addFlags(
+                            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                     mNextLevelDialog.show();
                     TextView mLevelNumber = (TextView) mNextLevelDialog.
                             findViewById(R.id.level_finished_text_view);
@@ -909,7 +912,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     Dialog mWinnerDialog = new Dialog(GameActivity.this,
                             R.style.DialogTheme);
                     mWinnerDialog.setContentView(R.layout.winning);
-                    mWinnerDialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+                    mWinnerDialog.getWindow().addFlags(
+                            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                     mWinnerDialog.show();
                     TextView mFinishScore = (TextView) mWinnerDialog.
                             findViewById(R.id.finished_score);
