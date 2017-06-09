@@ -30,6 +30,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     //private int mUpButtonID = 0, mDownButtonID = 0, mLeftButtonID = 0, mRightButtonID = 0;
     private int mIndex = 0;
     private int mClickID = 0;
+    private int mTempPoints = 0;
     private TextToSpeech mTTS;
     private Animation mAnimationBlendIn;
     private Animation mAnimationRotate;
@@ -455,7 +456,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new HigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex);
+                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -511,7 +512,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.playSound(mRandInterval);
                             DialogFragment mDialog = new IntervalDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex);
+                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -567,7 +568,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandInversion, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new InversionsDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex);
+                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -624,7 +625,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandIntervalHighLow, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new IntervalHigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex);
+                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -680,7 +681,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandMajorMinor, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new MajorMinorDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex);
+                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -771,49 +772,32 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 break;
             case "DOOR":
                 mSound.playSound(mSound.getSoundIDDoor());
+                mIcon.startAnimation(mAnimationRotate);
+                mVibrator.vibrate(100);
+                mClickID = 0;
+                mLeftClickable = false;
+                mRightClickable = false;
+                mUpClickable = false;
+                mDownClickable = false;
+                mLeftButton.setAlpha(.2f);
+                mRightButton.setAlpha(.2f);
+                mUpButton.setAlpha(.2f);
+                mDownButton.setAlpha(.2f);
+                mUpButton2.setAlpha(.2f);
+                mDownButton2.setAlpha(.2f);
+                mTempPoints = mPoints;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        if(mClickID == 0) {
+                            mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
+                            mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
+                            DialogFragment mDialog = new DoorDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mClickID = 1;
+                        }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
                 break;
             case "RIGHT_W":
                 mSound.playSound(mSound.getSoundIDwallRight());
@@ -1138,6 +1122,61 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
             case "Smaller":
                 testAnswerIntervalHigherLower(answer);
                 break;
+        }
+    }
+
+    public void onUserDismissedDialog() {
+        if(mPoints > mTempPoints) {
+            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
+            if (mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                if (Objects.equals(mLevel.getCurrentFieldValue(
+                        mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = true;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(1.0f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(1.0f);
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
+            } else {
+                mLeftClickable = true;
+                mRightClickable = true;
+                mUpClickable = false;
+                mDownClickable = false;
+                mLeftButton.setAlpha(1.0f);
+                mRightButton.setAlpha(1.0f);
+                mUpButton.setAlpha(.2f);
+                mDownButton.setAlpha(.2f);
+                mUpButton2.setAlpha(.2f);
+                mDownButton2.setAlpha(.2f);
+            }
+        } else {
+            mLevel.setCurrentFieldValue(mIndex, "DOOR");
+            mLeftClickable = true;
+            mRightClickable = false;
+            mUpClickable = false;
+            mDownClickable = false;
+            mLeftButton.setAlpha(1.0f);
+            mRightButton.setAlpha(.2f);
+            mUpButton.setAlpha(.2f);
+            mDownButton.setAlpha(.2f);
+            mUpButton2.setAlpha(.2f);
+            mDownButton2.setAlpha(.2f);
         }
     }
 }

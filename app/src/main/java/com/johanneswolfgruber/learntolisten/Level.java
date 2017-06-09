@@ -29,8 +29,8 @@ class Level {
         return 0;
     }
 
-    void setCurrentFieldValue(int index){
-        mLevel[index] = "EMPTY";
+    void setCurrentFieldValue(int index, String Value){
+        mLevel[index] = Value;
     }
 
     int numberOfFieldsPerRow(int level){
