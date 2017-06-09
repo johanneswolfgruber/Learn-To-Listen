@@ -12,6 +12,8 @@ class Level {
             case 2:
                 mLevel = GameActivity.getLevelTwo();
                 break;
+            case 3:
+                mLevel = GameActivity.getLevelThree();
         }
     }
 
@@ -21,6 +23,8 @@ class Level {
                 return 45000;
             case 2:
                 return 60000;
+            case 3:
+                return 90000;
         }
         return 0;
     }
@@ -34,6 +38,8 @@ class Level {
             case 1:
                 return 9;
             case 2:
+                return 9;
+            case 3:
                 return 9;
         }
         return 0;

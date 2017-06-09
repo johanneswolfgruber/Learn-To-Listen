@@ -83,4 +83,51 @@
         <item>EMPTY</item>
         <item>FINISH</item>
     </string-array>
+    <string-array name="LEVEL_THREE">
+        <item>LEFT_W</item>
+        <item>INVERSION</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>HIGH_LOW</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>LADDER</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>INTERVAL</item>
+        <item>EMPTY</item>
+        <item>INVERSION</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>INT_HIGH_LOW</item>
+        <item>EMPTY</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>LADDER</item>
+        <item>EMPTY</item>
+        <item>EMPTY</item>
+        <item>INTERVAL</item>
+        <item>EMPTY</item>
+        <item>DOOR</item>
+        <item>LADDER</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>EMPTY</item>
+        <item>INT_HIGH_LOW</item>
+        <item>LADDER</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>EMPTY</item>
+        <item>LADDER</item>
+        <item>RIGHT_W</item>
+        <item>LEFT_W</item>
+        <item>MAJOR_MINOR</item>
+        <item>EMPTY</item>
+        <item>INTERVAL</item>
+        <item>EMPTY</item>
+        <item>HIGH_LOW</item>
+        <item>EMPTY</item>
+        <item>EMPTY</item>
+        <item>FINISH</item>
+    </string-array>
 </resources>

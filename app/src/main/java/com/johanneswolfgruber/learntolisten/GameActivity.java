@@ -39,7 +39,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private Dialog mGameOverDialog, mNextLevelDialog;
     private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor;
     private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs;
-    private static String[] sLevelOne, sLevelTwo;
+    private static String[] sLevelOne, sLevelTwo, sLevelThree;
     private int mPoints = 0;
     private int mLevelID = 1;
     private Sound mSound;
@@ -88,6 +88,10 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         return sLevelTwo;
     }
 
+    static String[] getLevelThree() {
+        return sLevelThree;
+    }
+
     private void startLevel(int level) {
         hideBars();
         //Methods for Initializing
@@ -95,6 +99,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
         sLevelOne = getResources().getStringArray(R.array.LEVEL_ONE);
         sLevelTwo = getResources().getStringArray(R.array.LEVEL_TWO);
+        sLevelThree = getResources().getStringArray(R.array.LEVEL_THREE);
 
         initAnimations();
         initWidgets();
@@ -764,6 +769,52 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     mDownButton2.setAlpha(.2f);
                 }
                 break;
+            case "DOOR":
+                mSound.playSound(mSound.getSoundIDDoor());
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+                    if (Objects.equals(mLevel.getCurrentFieldValue(
+                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = true;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(1.0f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(1.0f);
+                    } else {
+                        mLeftClickable = true;
+                        mRightClickable = true;
+                        mUpClickable = false;
+                        mDownClickable = false;
+                        mLeftButton.setAlpha(1.0f);
+                        mRightButton.setAlpha(1.0f);
+                        mUpButton.setAlpha(.2f);
+                        mDownButton.setAlpha(.2f);
+                        mUpButton2.setAlpha(.2f);
+                        mDownButton2.setAlpha(.2f);
+                    }
+                } else {
+                    mLeftClickable = true;
+                    mRightClickable = true;
+                    mUpClickable = false;
+                    mDownClickable = false;
+                    mLeftButton.setAlpha(1.0f);
+                    mRightButton.setAlpha(1.0f);
+                    mUpButton.setAlpha(.2f);
+                    mDownButton.setAlpha(.2f);
+                    mUpButton2.setAlpha(.2f);
+                    mDownButton2.setAlpha(.2f);
+                }
+                break;
             case "RIGHT_W":
                 mSound.playSound(mSound.getSoundIDwallRight());
                 mIcon.setOnClickListener(new View.OnClickListener() {
@@ -878,7 +929,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mDownButton2.setAlpha(.2f);
                 mVibrator.vibrate(500);
                 mLevelID += 1;
-                if (mLevelID < 3) {
+                if (mLevelID < 4) {
                     mNextLevelDialog = new Dialog(GameActivity.this,
                             R.style.DialogTheme);
                     mNextLevelDialog.setContentView(R.layout.level_dialog);
