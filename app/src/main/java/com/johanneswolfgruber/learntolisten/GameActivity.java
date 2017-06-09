@@ -213,6 +213,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         if(Objects.equals(answer, "Higher") && (mRandHighLow == mSound.getSoundIDhigher1() ||
                 mRandHighLow == mSound.getSoundIDhigher2() ||
                 mRandHighLow == mSound.getSoundIDhigher3())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 100;
@@ -220,11 +222,15 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         } else if(Objects.equals(answer, "Lower") && (mRandHighLow == mSound.getSoundIDlower1() ||
                 mRandHighLow == mSound.getSoundIDlower2() ||
                 mRandHighLow == mSound.getSoundIDlower3())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
             Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer());
         }
@@ -232,83 +238,111 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
     private void testAnswerInterval(String answer){
         if(Objects.equals(answer, "Perfect Unison") && mRandInterval == mSound.getSoundIDunison()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Minor Second") &&
                 mRandInterval == mSound.getSoundIDminorSecond()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Major Second") &&
                 mRandInterval == mSound.getSoundIDmajorSecond()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Minor Third") &&
                 mRandInterval == mSound.getSoundIDminorThird()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Major Third") &&
                 mRandInterval == mSound.getSoundIDmajorThird()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Perfect Fourth") &&
                 mRandInterval == mSound.getSoundIDfourth()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Tritone") &&
                 mRandInterval == mSound.getSoundIDtritone()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Perfect Fifth") &&
                 mRandInterval == mSound.getSoundIDfifth()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Minor Sixth") &&
                 mRandInterval == mSound.getSoundIDminorSixth()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Major Sixth") &&
                 mRandInterval == mSound.getSoundIDmajorSixth()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Minor Seventh") &&
                 mRandInterval == mSound.getSoundIDminorSeventh()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Major Seventh") &&
                 mRandInterval == mSound.getSoundIDmajorSeventh()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Perfect Octave") &&
                 mRandInterval == mSound.getSoundIDoctave()){
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 500;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
             Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer());
         }
@@ -319,23 +353,31 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private void testAnswerInversions(String answer) {
         if (Objects.equals(answer, "Common chord") &&
                 mRandInversion == mSound.getSoundIDcommon_chord()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 200;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else if (Objects.equals(answer, "First inversion") &&
                 mRandInversion == mSound.getSoundIDfirst_inversion()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 200;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else if (Objects.equals(answer, "Second inversion") &&
                 mRandInversion == mSound.getSoundIDsecond_inversion()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 200;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
             Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer());
         }
@@ -344,29 +386,39 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private void testAnswerMajorMinor(String answer) {
         if (Objects.equals(answer, "Major") &&
                 mRandMajorMinor == mSound.getSoundIDmajor1()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 150;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else if (Objects.equals(answer, "Minor") &&
                 mRandMajorMinor == mSound.getSoundIDminor1()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 150;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else if (Objects.equals(answer, "Augmented") &&
                 mRandMajorMinor == mSound.getSoundIDaugmented1()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 150;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else if (Objects.equals(answer, "Diminished") &&
                 mRandMajorMinor == mSound.getSoundIDdiminished1()) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 150;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
             Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer());
         }
@@ -377,6 +429,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mRandIntervalHighLow == mSound.getSoundIDintervalHigher1() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalHigher2() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalHigher3())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 100;
@@ -385,11 +439,15 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mRandIntervalHighLow == mSound.getSoundIDintervalLower1() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalLower2() ||
                 mRandIntervalHighLow == mSound.getSoundIDintervalLower3())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer());
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
             Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer());
         }
@@ -400,6 +458,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         switch (currentFieldValue) {
             case "LEFT_W":
                 mSound.playSound(mSound.getSoundIDwallLeft());
+                mIcon.setImageResource(android.R.color.transparent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -445,6 +504,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 break;
             case "HIGH_LOW":
                 mSound.playSound(mSound.getSoundIDExercise());
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -456,51 +516,16 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new HigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
+                            //mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "INTERVAL":
                 mSound.playSound(mSound.getSoundIDExercise());
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -512,51 +537,16 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.playSound(mRandInterval);
                             DialogFragment mDialog = new IntervalDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
+                            //mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "INVERSION":
                 mSound.playSound(mSound.getSoundIDExercise());
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -573,46 +563,11 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "INT_HIGH_LOW":
                 mSound.playSound(mSound.getSoundIDExercise());
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -630,46 +585,11 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "MAJOR_MINOR":
                 mSound.playSound(mSound.getSoundIDExercise());
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -686,47 +606,11 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                         }
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "LADDER":
-                //mTTS.speak("LADDER", TextToSpeech.QUEUE_FLUSH, null);
                 mSound.playSound(mSound.getSoundIDLadder());
+                mIcon.setImageResource(android.R.color.transparent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -772,6 +656,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 break;
             case "DOOR":
                 mSound.playSound(mSound.getSoundIDDoor());
+                mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
                 mIcon.startAnimation(mAnimationRotate);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -799,8 +684,59 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     }
                 });
                 break;
+            case "DOOR_LOCKED":
+                mSound.playSound(mSound.getSoundIDDoor());
+                mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
+                mIcon.startAnimation(mAnimationRotate);
+                mVibrator.vibrate(100);
+                mClickID = 0;
+                mLeftClickable = true;
+                mRightClickable = false;
+                mUpClickable = false;
+                mDownClickable = false;
+                mLeftButton.setAlpha(1.0f);
+                mRightButton.setAlpha(.2f);
+                mUpButton.setAlpha(.2f);
+                mDownButton.setAlpha(.2f);
+                mUpButton2.setAlpha(.2f);
+                mDownButton2.setAlpha(.2f);
+                mTempPoints = mPoints;
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
+                break;
+            case "DOOR_UNLOCKED":
+                mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
+                checkForLadder();
+                break;
+            case "CORRECT":
+                mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
+                checkForLadder();
+                break;
+            case "WRONG":
+                mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
+                checkForLadder();
+                break;
             case "RIGHT_W":
                 mSound.playSound(mSound.getSoundIDwallRight());
+                mIcon.setImageResource(android.R.color.transparent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -845,50 +781,16 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 }
                 break;
             case "EMPTY":
+                mIcon.setImageResource(android.R.color.transparent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                     }
                 });
-                if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
-                    if (Objects.equals(mLevel.getCurrentFieldValue(
-                            mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = true;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(1.0f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(1.0f);
-                    } else {
-                        mLeftClickable = true;
-                        mRightClickable = true;
-                        mUpClickable = false;
-                        mDownClickable = false;
-                        mLeftButton.setAlpha(1.0f);
-                        mRightButton.setAlpha(1.0f);
-                        mUpButton.setAlpha(.2f);
-                        mDownButton.setAlpha(.2f);
-                        mUpButton2.setAlpha(.2f);
-                        mDownButton2.setAlpha(.2f);
-                    }
-                } else {
-                    mLeftClickable = true;
-                    mRightClickable = true;
-                    mUpClickable = false;
-                    mDownClickable = false;
-                    mLeftButton.setAlpha(1.0f);
-                    mRightButton.setAlpha(1.0f);
-                    mUpButton.setAlpha(.2f);
-                    mDownButton.setAlpha(.2f);
-                    mUpButton2.setAlpha(.2f);
-                    mDownButton2.setAlpha(.2f);
-                }
+                checkForLadder();
                 break;
             case "FINISH":
+                mIcon.setImageResource(android.R.color.transparent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -969,6 +871,46 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         }
     }
 
+    private void checkForLadder() {
+        if(mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
+            if (Objects.equals(mLevel.getCurrentFieldValue(
+                    mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
+                mLeftClickable = true;
+                mRightClickable = true;
+                mUpClickable = false;
+                mDownClickable = true;
+                mLeftButton.setAlpha(1.0f);
+                mRightButton.setAlpha(1.0f);
+                mUpButton.setAlpha(.2f);
+                mDownButton.setAlpha(1.0f);
+                mUpButton2.setAlpha(.2f);
+                mDownButton2.setAlpha(1.0f);
+            } else {
+                mLeftClickable = true;
+                mRightClickable = true;
+                mUpClickable = false;
+                mDownClickable = false;
+                mLeftButton.setAlpha(1.0f);
+                mRightButton.setAlpha(1.0f);
+                mUpButton.setAlpha(.2f);
+                mDownButton.setAlpha(.2f);
+                mUpButton2.setAlpha(.2f);
+                mDownButton2.setAlpha(.2f);
+            }
+        } else {
+            mLeftClickable = true;
+            mRightClickable = true;
+            mUpClickable = false;
+            mDownClickable = false;
+            mLeftButton.setAlpha(1.0f);
+            mRightButton.setAlpha(1.0f);
+            mUpButton.setAlpha(.2f);
+            mDownButton.setAlpha(.2f);
+            mUpButton2.setAlpha(.2f);
+            mDownButton2.setAlpha(.2f);
+        }
+    }
+
     private static int randNumber(int n){
         Random random = new Random();
         return random.nextInt(n);
@@ -985,6 +927,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         mLevelTextView = (TextView) findViewById(R.id.level_text_view);
 
         mIcon = (ImageView) findViewById(R.id.image_view_icon_big);
+        mIcon.setImageResource(android.R.color.transparent);
 
         mUpButton = (ImageButton) findViewById(R.id.up_button);
         mDownButton = (ImageButton) findViewById(R.id.down_button);
@@ -1127,7 +1070,8 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
     public void onUserDismissedDialog() {
         if(mPoints > mTempPoints) {
-            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
+            mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
+            mLevel.setCurrentFieldValue(mIndex, "DOOR_UNLOCKED");
             if (mIndex > mLevel.numberOfFieldsPerRow(mLevelID)) {
                 if (Objects.equals(mLevel.getCurrentFieldValue(
                         mIndex - mLevel.numberOfFieldsPerRow(mLevelID)), "LADDER")) {
@@ -1166,7 +1110,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mDownButton2.setAlpha(.2f);
             }
         } else {
-            mLevel.setCurrentFieldValue(mIndex, "DOOR");
+            mLevel.setCurrentFieldValue(mIndex, "DOOR_LOCKED");
             mLeftClickable = true;
             mRightClickable = false;
             mUpClickable = false;
