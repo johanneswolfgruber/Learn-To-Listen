@@ -45,6 +45,30 @@ class Level {
         return 0;
     }
 
+    int getExerciseCount(int level) {
+        switch (level) {
+            case 1:
+                return 11;
+            case 2:
+                return 12;
+            case 3:
+                return 13;
+        }
+        return 0;
+    }
+
+    int getFieldCount(int level) {
+        switch (level) {
+            case 1:
+                return 26;
+            case 2:
+                return 26;
+            case 3:
+                return 44;
+        }
+        return 0;
+    }
+
     String getCurrentFieldValue(int index){
         return mLevel[index];
     }

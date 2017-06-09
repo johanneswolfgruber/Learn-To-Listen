@@ -117,6 +117,38 @@
         android:layout_marginStart="8dp" />
 
     <TextView
+        android:id="@+id/fieldcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Field: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@id/down_button"
+        app:layout_constraintRight_toLeftOf="@id/level_text_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_icon_big"/>
+
+    <TextView
+        android:id="@+id/exercisecount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quests: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@id/level_text_view"
+        app:layout_constraintRight_toLeftOf="@id/down_button2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_view_icon_big"/>
+
+    <TextView
         android:id="@+id/score_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

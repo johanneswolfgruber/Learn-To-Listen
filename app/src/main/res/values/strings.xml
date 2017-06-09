@@ -25,6 +25,9 @@
     <string name="next_level_text">Next Level</string>
     <string name="you_won_text">YOU WON!</string>
     <string name="reset_highscore_button">RESET HIGHSCORE</string>
+    <string name="solved_text">Solved:</string>
+    <string name="wrong_text">Wrong:</string>
+    <string name="not_solved_text">Not Solved:</string>
     <string-array name="LEVEL_ONE">
         <item>LEFT_W</item>
         <item>HIGH_LOW</item>
