@@ -516,7 +516,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new HigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            //mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -537,7 +536,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.playSound(mRandInterval);
                             DialogFragment mDialog = new IntervalDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            //mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -558,7 +556,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandInversion, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new InversionsDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -580,7 +577,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandIntervalHighLow, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new IntervalHigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
@@ -601,7 +597,6 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                             mSound.getSoundPool().play(mRandMajorMinor, 1.0f, 1.0f, 0, 0, 1);
                             DialogFragment mDialog = new MajorMinorDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
-                            mLevel.setCurrentFieldValue(mIndex, "EMPTY");
                             mClickID = 1;
                         }
                     }
