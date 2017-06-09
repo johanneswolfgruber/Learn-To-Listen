@@ -596,7 +596,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 break;
             case "LADDER":
                 mSound.playSound(mSound.getSoundIDLadder());
-                mIcon.setImageResource(android.R.color.transparent);
+                mIcon.setImageResource(R.drawable.ic_arrow_upward_black_48dp);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
