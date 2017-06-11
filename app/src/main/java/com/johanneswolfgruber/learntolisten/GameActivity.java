@@ -32,6 +32,7 @@ public class GameActivity extends AppCompatActivity{
     private int mField = 0;
     private int mRight = 0;
     private int mWrong = 0;
+    private int mDoorID = 0;
     //private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlink, mAnimationBlinking;
     private ImageView mIcon;
@@ -113,6 +114,7 @@ public class GameActivity extends AppCompatActivity{
         mField = mLevel.getFieldCount(level);
         mRight = mLevel.getExerciseCount(level);
         mWrong = 0;
+        mDoorID = 0;
 
         fieldCounter();
         exerciseCounter();
@@ -622,21 +624,17 @@ public class GameActivity extends AppCompatActivity{
                 mVibrator.vibrate(100);
                 mClickID = 0;
                 nothingClickable();
-                mTempPoints = mPoints;
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        mTempPoints = mPoints;
                         if(mClickID == 0) {
-                            mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
-                            mRandInterval = intervalIDs[randNumber(intervalIDs.length)];
-                            mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
-                            mRandIntervalHighLow =
-                                    intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
-                            mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
-
-                            int mRandExercise = randNumber(4);
-                            startExerciseDoor(mRandExercise);
-                            mClickID = 1;
+                            if(mDoorID <= 2) {
+                                int mRandExercise = randNumber(4);
+                                startExerciseDoor(mRandExercise);
+                            } else {
+                                mClickID = 1;
+                            }
                         }
                     }
                 });
@@ -645,9 +643,6 @@ public class GameActivity extends AppCompatActivity{
             case "DOOR_LOCKED":
                 mSound.playSound(mSound.getSoundIDDoor());
                 mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
-                mIcon.startAnimation(mAnimationBlinking);
-                mVibrator.vibrate(100);
-                mClickID = 0;
                 leftClickable();
                 mTempPoints = mPoints;
                 mIcon.setOnClickListener(new View.OnClickListener() {
@@ -980,10 +975,16 @@ public class GameActivity extends AppCompatActivity{
 
     public void onUserDismissedDialog() {
         if(mPoints > mTempPoints) {
-            mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
-            mLevel.setCurrentFieldValue(mIndex, "DOOR_UNLOCKED");
-            checkForLadder();
+            if(mDoorID == 2) {
+                mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
+                mLevel.setCurrentFieldValue(mIndex, "DOOR_UNLOCKED");
+                checkForLadder();
+            } else {
+                mIcon.startAnimation(mAnimationBlinking);
+                mDoorID += 1;
+            }
         } else {
+            mDoorID = 3;
             mLevel.setCurrentFieldValue(mIndex, "DOOR_LOCKED");
             leftClickable();
         }
@@ -1096,6 +1097,12 @@ public class GameActivity extends AppCompatActivity{
     }
 
     void startExerciseDoor(int exercise) {
+        mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
+        mRandInterval = intervalIDs[randNumber(intervalIDs.length)];
+        mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
+        mRandIntervalHighLow =
+                intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
+        mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
         switch (exercise) {
             case 0:
                 mSound.playSound(mRandHighLow);
