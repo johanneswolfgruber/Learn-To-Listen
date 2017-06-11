@@ -978,6 +978,8 @@ public class GameActivity extends AppCompatActivity{
             if(mDoorID == 2) {
                 mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
                 mLevel.setCurrentFieldValue(mIndex, "DOOR_UNLOCKED");
+                mPoints += 500;
+                mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
                 checkForLadder();
             } else {
                 mIcon.startAnimation(mAnimationBlinking);
