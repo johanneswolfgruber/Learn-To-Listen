@@ -44,6 +44,7 @@ public class IntervalDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        sCheckedItem = null;
                     }
                 });
         AlertDialog alertDialog = builder.create();

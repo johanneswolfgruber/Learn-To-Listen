@@ -9,15 +9,15 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 @SuppressWarnings("ConstantConditions")
-public class InversionsDialogFragment extends DialogFragment {
+public class DoorDialog0Fragment extends DialogFragment {
 
-    private String[] mAnswers = {"Common chord", "First inversion", "Second inversion"};
+    private String[] mAnswers = {"Higher", "Lower"};
     private static Object sCheckedItem;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Which inversion was the chord?")
+        builder.setTitle("Was the second sound higher or lower pitch than the first one?")
                 .setSingleChoiceItems(mAnswers, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -34,6 +34,7 @@ public class InversionsDialogFragment extends DialogFragment {
                         GameActivity callingActivity = (GameActivity) getActivity();
                         callingActivity.onUserSelectValue(answer);
                         dialog.dismiss();
+                        callingActivity.onUserDismissedDialog();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

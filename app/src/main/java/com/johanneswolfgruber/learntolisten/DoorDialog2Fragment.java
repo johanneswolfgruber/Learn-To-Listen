@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 @SuppressWarnings("ConstantConditions")
-public class InversionsDialogFragment extends DialogFragment {
+public class DoorDialog2Fragment extends DialogFragment {
 
     private String[] mAnswers = {"Common chord", "First inversion", "Second inversion"};
     private static Object sCheckedItem;
@@ -34,6 +34,7 @@ public class InversionsDialogFragment extends DialogFragment {
                         GameActivity callingActivity = (GameActivity) getActivity();
                         callingActivity.onUserSelectValue(answer);
                         dialog.dismiss();
+                        callingActivity.onUserDismissedDialog();
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

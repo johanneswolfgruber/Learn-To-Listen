@@ -500,7 +500,7 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                         if(mClickID == 0) {
                             mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
-                            mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
+                            mSound.playSound(mRandHighLow);
                             DialogFragment mDialog = new HigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
                             mClickID = 1;
@@ -542,7 +542,7 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                         if(mClickID == 0) {
                             mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
-                            mSound.getSoundPool().play(mRandInversion, 1.0f, 1.0f, 0, 0, 1);
+                            mSound.playSound(mRandInversion);
                             DialogFragment mDialog = new InversionsDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
                             mClickID = 1;
@@ -564,7 +564,7 @@ public class GameActivity extends AppCompatActivity{
                         if(mClickID == 0) {
                             mRandIntervalHighLow =
                                     intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
-                            mSound.getSoundPool().play(mRandIntervalHighLow, 1.0f, 1.0f, 0, 0, 1);
+                            mSound.playSound(mRandIntervalHighLow);
                             DialogFragment mDialog = new IntervalHigherLowerDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
                             mClickID = 1;
@@ -585,7 +585,7 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                         if(mClickID == 0) {
                             mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
-                            mSound.getSoundPool().play(mRandMajorMinor, 1.0f, 1.0f, 0, 0, 1);
+                            mSound.playSound(mRandMajorMinor);
                             DialogFragment mDialog = new MajorMinorDialogFragment();
                             mDialog.show(getFragmentManager(), "DialogFragment");
                             mClickID = 1;
@@ -628,9 +628,14 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                         if(mClickID == 0) {
                             mRandHighLow = highLowIDs[randNumber(highLowIDs.length)];
-                            mSound.getSoundPool().play(mRandHighLow, 1.0f, 1.0f, 0, 0, 1);
-                            DialogFragment mDialog = new DoorDialogFragment();
-                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mRandInterval = intervalIDs[randNumber(intervalIDs.length)];
+                            mRandInversion = inversionsIDs[randNumber(inversionsIDs.length)];
+                            mRandIntervalHighLow =
+                                    intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
+                            mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
+
+                            int mRandExercise = randNumber(4);
+                            startExerciseDoor(mRandExercise);
                             mClickID = 1;
                         }
                     }
@@ -1088,5 +1093,35 @@ public class GameActivity extends AppCompatActivity{
 
     private void wrongCounter() {
         mWrong += 1;
+    }
+
+    void startExerciseDoor(int exercise) {
+        switch (exercise) {
+            case 0:
+                mSound.playSound(mRandHighLow);
+                DialogFragment mDialog0 = new DoorDialog0Fragment();
+                mDialog0.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 1:
+                mSound.playSound(mRandInterval);
+                DialogFragment mDialog1 = new DoorDialog1Fragment();
+                mDialog1.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 2:
+                mSound.playSound(mRandInversion);
+                DialogFragment mDialog2 = new DoorDialog2Fragment();
+                mDialog2.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 3:
+                mSound.playSound(mRandIntervalHighLow);
+                DialogFragment mDialog3 = new DoorDialog3Fragment();
+                mDialog3.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 4:
+                mSound.playSound(mRandMajorMinor);
+                DialogFragment mDialog4 = new DoorDialog4Fragment();
+                mDialog4.show(getFragmentManager(), "DialogFragment");
+                break;
+        }
     }
 }

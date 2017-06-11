@@ -9,15 +9,15 @@ import android.view.WindowManager;
 import android.widget.ListView;
 
 @SuppressWarnings("ConstantConditions")
-public class DoorDialogFragment extends DialogFragment {
+public class DoorDialog4Fragment extends DialogFragment {
 
-    private String[] mAnswers = {"Higher", "Lower"};
+    private String[] mAnswers = {"Major", "Minor", "Augmented", "Diminished"};
     private static Object sCheckedItem;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Was the second sound higher or lower pitch than the first one?")
+        builder.setTitle("Was the triad major, minor, augmented or diminished?")
                 .setSingleChoiceItems(mAnswers, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
