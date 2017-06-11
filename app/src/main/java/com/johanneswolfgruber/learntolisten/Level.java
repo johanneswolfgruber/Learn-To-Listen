@@ -52,7 +52,7 @@ class Level {
             case 2:
                 return 12;
             case 3:
-                return 13;
+                return 16;
         }
         return 0;
     }

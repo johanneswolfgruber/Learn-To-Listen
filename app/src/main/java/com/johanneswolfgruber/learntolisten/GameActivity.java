@@ -81,7 +81,6 @@ public class GameActivity extends AppCompatActivity{
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
-
     static String[] getLevelOne() {
         return sLevelOne;
     }
@@ -477,7 +476,6 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
-    @SuppressWarnings("deprecation")
     public void switchKey(String currentFieldValue){
         switch (currentFieldValue) {
             case "LEFT_W":

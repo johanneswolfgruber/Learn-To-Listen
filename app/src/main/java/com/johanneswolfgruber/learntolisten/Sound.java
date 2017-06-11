@@ -1,6 +1,7 @@
 package com.johanneswolfgruber.learntolisten;
 
 import android.content.Context;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
@@ -19,18 +20,28 @@ class Sound {
             soundIDintervalLower3, soundIDgameover, soundIDlevelfinish, soundIDnewgame,
             soundIDbutton, soundIDwallRight;
 
-
-    @SuppressWarnings("deprecation")
+    
     void initSounds(Context context) {
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mSoundPool = new SoundPool.Builder()
-                    .setMaxStreams(2)
+            AudioAttributes attributes = new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_GAME)
                     .build();
+            mSoundPool = new SoundPool.Builder()
+                    .setMaxStreams(1)
+                    .setAudioAttributes(attributes)
+                    .build();
+
+            loadSounds(context);
         } else {
-            mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
+            mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+            loadSounds(context);
         }
 
+
+    }
+
+    private void loadSounds(Context context) {
         soundIDSteps = mSoundPool.load(context, R.raw.steps, 0);
         soundIDwallLeft = mSoundPool.load(context, R.raw.left_wall, 0);
         soundIDwallRight = mSoundPool.load(context, R.raw.right_wall, 0);
