@@ -4,7 +4,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.speech.tts.TextToSpeech;
+//import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,11 +16,9 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
+public class MainMenuActivity extends AppCompatActivity{
 
-    //Define Buttons, IDs, TextToSpeech, Animation
-    private Button mNewGameButton, mTutorialButton, mGamesoundsButton, mResetHighscoreButton;
-    private TextToSpeech mTTS;
+    //private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
     private Sound mSound;
@@ -32,14 +30,14 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
 
         //Initialize Buttons, TextToSpeech, Animation
         //set OnClickListeners for Buttons
-        mTTS = new TextToSpeech(this, this);
+        //mTTS = new TextToSpeech(this, this);
         mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
         mAnimationBlinking = AnimationUtils.loadAnimation(this, R.anim.blinking);
         mHigh = (TextView) findViewById(R.id.highscore_text_view);
         mSound = new Sound();
         mSound.initSounds(this);
 
-        mNewGameButton = (Button) findViewById(R.id.new_game_button);
+        Button mNewGameButton = (Button) findViewById(R.id.new_game_button);
         mNewGameButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +49,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
             }
         });
 
-        mTutorialButton = (Button) findViewById(R.id.tutorial_button);
+        Button mTutorialButton = (Button) findViewById(R.id.tutorial_button);
         mTutorialButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +61,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
             }
         });
 
-        mGamesoundsButton = (Button) findViewById(R.id.gamesounds_button);
+        Button mGamesoundsButton = (Button) findViewById(R.id.gamesounds_button);
         mGamesoundsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +73,7 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
             }
         });
 
-        mResetHighscoreButton = (Button) findViewById(R.id.reset_highscore_button);
+        Button mResetHighscoreButton = (Button) findViewById(R.id.reset_highscore_button);
         mResetHighscoreButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,10 +88,12 @@ public class MainMenuActivity extends AppCompatActivity implements TextToSpeech.
         deleteHighscore();
     }
 
+    /*
     @Override
     public void onInit(int status) {
         mTTS.setLanguage(Locale.US);
     }
+    */
 
     @Override
     public void onResume() {

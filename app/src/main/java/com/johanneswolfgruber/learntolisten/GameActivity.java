@@ -5,7 +5,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.speech.tts.TextToSpeech;
+//import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +22,7 @@ import java.util.Objects;
 import java.util.Random;
 
 @SuppressWarnings("ConstantConditions")
-public class GameActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
+public class GameActivity extends AppCompatActivity{
     private ImageButton mUpButton, mDownButton, mUpButton2, mDownButton2, mLeftButton, mRightButton;
     private boolean mUpClickable = false, mDownClickable = false,
             mLeftClickable = false, mRightClickable = true;
@@ -32,7 +32,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
     private int mField = 0;
     private int mRight = 0;
     private int mWrong = 0;
-    private TextToSpeech mTTS;
+    //private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlink, mAnimationBlinking;
     private ImageView mIcon;
     private CountDownTimer mTimer;
@@ -55,7 +55,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
 
-        mTTS = new TextToSpeech(this, this);
+        //mTTS = new TextToSpeech(this, this);
         mSound = new Sound();
         mSound.initSounds(this);
         initSoundIDs();
@@ -112,6 +112,7 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
 
         mField = mLevel.getFieldCount(level);
         mRight = mLevel.getExerciseCount(level);
+        mWrong = 0;
 
         fieldCounter();
         exerciseCounter();
@@ -906,10 +907,12 @@ public class GameActivity extends AppCompatActivity implements TextToSpeech.OnIn
                 mSound.getSoundIDaugmented1(), mSound.getSoundIDdiminished1()};
     }
 
+    /*
     @Override
     public void onInit(int status) {
         mTTS.setLanguage(Locale.US);
     }
+    */
 
     @Override
     public void onResume() {
