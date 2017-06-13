@@ -641,6 +641,11 @@ public class GameActivity extends AppCompatActivity{
             case "DOOR_LOCKED":
                 mSound.playSound(mSound.getSoundIDDoor());
                 mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
                 leftClickable();
                 mTempPoints = mPoints;
                 mIcon.setOnClickListener(new View.OnClickListener() {
@@ -979,6 +984,7 @@ public class GameActivity extends AppCompatActivity{
                 mPoints += 500;
                 mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
                 checkForLadder();
+                mClickID = 1;
             } else {
                 mIcon.startAnimation(mAnimationBlinking);
                 mDoorID += 1;
