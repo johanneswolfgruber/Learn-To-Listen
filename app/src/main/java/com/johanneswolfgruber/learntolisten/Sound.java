@@ -28,13 +28,13 @@ class Sound {
                     .setUsage(AudioAttributes.USAGE_GAME)
                     .build();
             mSoundPool = new SoundPool.Builder()
-                    .setMaxStreams(3)
+                    .setMaxStreams(2)
                     .setAudioAttributes(attributes)
                     .build();
 
             loadSounds(context);
         } else {
-            mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
+            mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
             loadSounds(context);
         }
 
