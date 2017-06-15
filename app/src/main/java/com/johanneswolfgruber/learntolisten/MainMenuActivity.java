@@ -41,7 +41,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mNewGameButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDnewgame());
+                mSound.playSound(mSound.getSoundIDnewgame(), 1.0f, 1.0f);
                 //start GameActivity.java
                 Intent newGameIntent = new Intent(MainMenuActivity.this,
                         GameActivity.class);
@@ -53,7 +53,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mTutorialButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton());
+                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
                 //start TutorialActivity.java
                 Intent tutorialIntent = new Intent(MainMenuActivity.this,
                         TutorialActivity.class);
@@ -65,7 +65,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mGamesoundsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton());
+                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
                 //start GamesoundsActivity.java
                 Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
                         GamesoundsActivity.class);
@@ -77,7 +77,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mResetHighscoreButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton());
+                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
                 DialogFragment mDialog = new ResetHighscore();
                 mDialog.show(getFragmentManager(), "DialogFragment");
             }
