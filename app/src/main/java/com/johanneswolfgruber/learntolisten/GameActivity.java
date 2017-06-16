@@ -1120,6 +1120,9 @@ public class GameActivity extends AppCompatActivity{
     private void fieldCounter() {
         mField -= mIndex;
         mFieldCounter.setText(String.format(Locale.getDefault(), "Field: %d", mField));
+        if(mField == 1) {
+            mSound.playSound(mSound.getSoundIDfinish(), mVol);
+        }
         mField = mLevel.getFieldCount(mLevelID);
     }
 
