@@ -53,7 +53,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView1String, mButton1ID);
                 } else if(mButton1ID == 1) {
                     mButton1ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDSteps(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDSteps(), 1.0f);
                 }
             }
         });
@@ -69,7 +69,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView2String, mButton2ID);
                 } else if(mButton2ID == 1) {
                     mButton2ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDExercise(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDExercise(), 1.0f);
                 }
             }
         });
@@ -85,7 +85,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView3String, mButton3ID);
                 } else if(mButton3ID == 1) {
                     mButton3ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDRightAnswer(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDRightAnswer(), 1.0f);
                 }
             }
         });
@@ -101,7 +101,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView4String, mButton4ID);
                 } else if(mButton4ID == 1) {
                     mButton4ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDWrongAnswer(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDWrongAnswer(), 1.0f);
                 }
             }
         });
@@ -117,7 +117,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView5String, mButton5ID);
                 } else if(mButton5ID == 1) {
                     mButton5ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDwallLeft(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDwallLeft(), 1.0f);
                 }
             }
         });
@@ -133,7 +133,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView6String, mButton6ID);
                 } else if(mButton6ID == 1) {
                     mButton6ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDLadder(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDLadder(), 1.0f);
                 }
             }
         });
@@ -149,7 +149,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView7String, mButton7ID);
                 } else if(mButton7ID == 1) {
                     mButton7ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDLadderDown(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDLadderDown(), 1.0f);
                 }
             }
         });
@@ -165,7 +165,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
                             mTextView8String, mButton8ID);
                 } else if(mButton8ID == 1) {
                     mButton8ID = 0;
-                    mSound.getSoundPool().play(mSound.getSoundIDDoor(), 1.0f, 1.0f, 0, 0, 1);
+                    mSound.playSound(mSound.getSoundIDDoor(), 1.0f);
                 }
             }
         });

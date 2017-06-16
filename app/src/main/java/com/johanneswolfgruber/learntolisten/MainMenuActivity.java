@@ -22,6 +22,7 @@ public class MainMenuActivity extends AppCompatActivity{
     private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
     private Sound mSound;
+    private float mVol = 1.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mNewGameButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDnewgame(), 1.0f, 1.0f);
+                mSound.playSound(mSound.getSoundIDnewgame(), mVol);
                 //start GameActivity.java
                 Intent newGameIntent = new Intent(MainMenuActivity.this,
                         GameActivity.class);
@@ -53,7 +54,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mTutorialButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
+                mSound.playSound(mSound.getSoundIDbutton(), mVol);
                 //start TutorialActivity.java
                 Intent tutorialIntent = new Intent(MainMenuActivity.this,
                         TutorialActivity.class);
@@ -65,7 +66,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mGamesoundsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
+                mSound.playSound(mSound.getSoundIDbutton(), mVol);
                 //start GamesoundsActivity.java
                 Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
                         GamesoundsActivity.class);
@@ -77,7 +78,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mResetHighscoreButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), 1.0f, 1.0f);
+                mSound.playSound(mSound.getSoundIDbutton(), mVol);
                 DialogFragment mDialog = new ResetHighscore();
                 mDialog.show(getFragmentManager(), "DialogFragment");
             }

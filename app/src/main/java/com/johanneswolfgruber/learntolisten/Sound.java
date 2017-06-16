@@ -18,7 +18,7 @@ class Sound {
             soundIDdiminished1, soundIDaugmented1, soundIDintervalHigher1, soundIDintervalHigher2,
             soundIDintervalHigher3, soundIDintervalLower1, soundIDintervalLower2,
             soundIDintervalLower3, soundIDgameover, soundIDlevelfinish, soundIDnewgame,
-            soundIDbutton, soundIDwallRight, soundIDcountdown;
+            soundIDbutton, soundIDwallRight, soundIDcountdown, soundIDexerciseDown;
 
     
     void initSounds(Context context) {
@@ -47,8 +47,9 @@ class Sound {
         soundIDwallRight = mSoundPool.load(context, R.raw.right_wall, 0);
         soundIDDoor = mSoundPool.load(context, R.raw.door, 0);
         soundIDExercise = mSoundPool.load(context, R.raw.exercise, 0);
+        soundIDexerciseDown = mSoundPool.load(context, R.raw.exrercise_down, 0);
         soundIDLadder = mSoundPool.load(context, R.raw.ladder, 0);
-        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder, 0);
+        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder_down, 0);
         soundIDRightAnswer = mSoundPool.load(context, R.raw.right, 0);
         soundIDWrongAnswer = mSoundPool.load(context, R.raw.wrong, 0);
         soundIDgameover = mSoundPool.load(context, R.raw.gameover, 0);
@@ -90,8 +91,8 @@ class Sound {
         soundIDintervalLower3 = mSoundPool.load(context, R.raw.interval_lower3_root_c3, 0);
     }
 
-    void playSound(int soundID, float leftVol, float rightVol){
-        mSoundPool.play(soundID, leftVol, rightVol, 0, 0, 1);
+    void playSound(int soundID, float Vol){
+        mSoundPool.play(soundID, Vol, Vol, 0, 0, 1);
     }
 
     SoundPool getSoundPool() {
@@ -128,6 +129,10 @@ class Sound {
 
     int getSoundIDExercise() {
         return soundIDExercise;
+    }
+
+    int getSoundIDexerciseDown() {
+        return soundIDexerciseDown;
     }
 
     int getSoundIDLadder() {
