@@ -365,8 +365,9 @@ public class GameActivity extends AppCompatActivity{
     }
 
     private void testAnswerInversions(String answer) {
-        if (Objects.equals(answer, "Common chord") &&
-                mRandInversion == mSound.getSoundIDcommon_chord()) {
+        if (Objects.equals(answer, "Common chord") && (
+                    mRandInversion == mSound.getSoundIDcommon_chord() ||
+                    mRandInversion == mSound.getSoundIDcommon_chord_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
             mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             exerciseCounter();
@@ -374,8 +375,9 @@ public class GameActivity extends AppCompatActivity{
             mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
             mPoints += 200;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
-        } else if (Objects.equals(answer, "First inversion") &&
-                mRandInversion == mSound.getSoundIDfirst_inversion()) {
+        } else if (Objects.equals(answer, "First inversion") && (
+                    mRandInversion == mSound.getSoundIDfirst_inversion() ||
+                    mRandInversion == mSound.getSoundIDfirst_inversion_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
             mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             exerciseCounter();
@@ -383,8 +385,9 @@ public class GameActivity extends AppCompatActivity{
             mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
             mPoints += 200;
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
-        } else if (Objects.equals(answer, "Second inversion") &&
-                mRandInversion == mSound.getSoundIDsecond_inversion()) {
+        } else if (Objects.equals(answer, "Second inversion") && (
+                    mRandInversion == mSound.getSoundIDsecond_inversion() ||
+                    mRandInversion == mSound.getSoundIDsecond_inversion_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
             mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             exerciseCounter();
@@ -449,9 +452,16 @@ public class GameActivity extends AppCompatActivity{
 
     private void testAnswerIntervalHigherLower(String answer) {
         if(Objects.equals(answer, "Bigger") && (
-                mRandIntervalHighLow == mSound.getSoundIDintervalHigher1() ||
-                mRandIntervalHighLow == mSound.getSoundIDintervalHigher2() ||
-                mRandIntervalHighLow == mSound.getSoundIDintervalHigher3())) {
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher1() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher2() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher3() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher4() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher5() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher6() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher7() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher8() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher9() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalHigher10())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
             mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             exerciseCounter();
@@ -460,9 +470,16 @@ public class GameActivity extends AppCompatActivity{
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else if(Objects.equals(answer, "Smaller") && (
-                mRandIntervalHighLow == mSound.getSoundIDintervalLower1() ||
-                mRandIntervalHighLow == mSound.getSoundIDintervalLower2() ||
-                mRandIntervalHighLow == mSound.getSoundIDintervalLower3())) {
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower1() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower2() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower3() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower4() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower5() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower6() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower7() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower8() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower9() ||
+                    mRandIntervalHighLow == mSound.getSoundIDintervalLower10())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
             mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
             exerciseCounter();
@@ -1079,12 +1096,21 @@ public class GameActivity extends AppCompatActivity{
                 mSound.getSoundIDoctave()};
 
         inversionsIDs = new int[]{mSound.getSoundIDcommon_chord(),
-                mSound.getSoundIDfirst_inversion(), mSound.getSoundIDsecond_inversion()};
+                mSound.getSoundIDfirst_inversion(), mSound.getSoundIDsecond_inversion(),
+                mSound.getSoundIDcommon_chord_min(), mSound.getSoundIDfirst_inversion_min(),
+                mSound.getSoundIDsecond_inversion_min()};
 
         intervalHighLowIDs = new int[]{mSound.getSoundIDintervalHigher1(),
                 mSound.getSoundIDintervalHigher2(), mSound.getSoundIDintervalHigher3(),
-                mSound.getSoundIDintervalLower1(), mSound.getSoundIDintervalLower2(),
-                mSound.getSoundIDintervalLower3()};
+                mSound.getSoundIDintervalHigher4(), mSound.getSoundIDintervalHigher5(),
+                mSound.getSoundIDintervalHigher6(), mSound.getSoundIDintervalHigher7(),
+                mSound.getSoundIDintervalHigher8(), mSound.getSoundIDintervalHigher9(),
+                mSound.getSoundIDintervalHigher10(), mSound.getSoundIDintervalLower1(),
+                mSound.getSoundIDintervalLower2(), mSound.getSoundIDintervalLower3(),
+                mSound.getSoundIDintervalLower4(), mSound.getSoundIDintervalLower5(),
+                mSound.getSoundIDintervalLower6(), mSound.getSoundIDintervalLower7(),
+                mSound.getSoundIDintervalLower8(), mSound.getSoundIDintervalLower9(),
+                mSound.getSoundIDintervalLower10()};
 
         majorMinorIDs = new int[]{mSound.getSoundIDmajor1(), mSound.getSoundIDminor1(),
                 mSound.getSoundIDaugmented1(), mSound.getSoundIDdiminished1()};
