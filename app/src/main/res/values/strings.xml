@@ -30,7 +30,7 @@
     <string name="not_solved_text">Not Solved:</string>
     <string-array name="LEVEL_ONE">
         <item>LEFT_W</item>
-        <item>HIGH_LOW</item>
+        <item>HIGH_LOW_SEASHORE</item>
         <item>EMPTY</item>
         <item>INTERVAL</item>
         <item>INVERSION</item>
@@ -43,7 +43,7 @@
         <item>EMPTY</item>
         <item>LADDER</item>
         <item>EMPTY</item>
-        <item>HIGH_LOW</item>
+        <item>LONG_SHORT_SEASHORE</item>
         <item>INVERSION</item>
         <item>EMPTY</item>
         <item>RIGHT_W</item>
@@ -52,7 +52,7 @@
         <item>EMPTY</item>
         <item>INTERVAL</item>
         <item>INVERSION</item>
-        <item>HIGH_LOW</item>
+        <item>LOUD_QUIET_SEASHORE</item>
         <item>MAJOR_MINOR</item>
         <item>EMPTY</item>
         <item>FINISH</item>
@@ -63,7 +63,7 @@
         <item>EMPTY</item>
         <item>EMPTY</item>
         <item>INT_HIGH_LOW</item>
-        <item>HIGH_LOW</item>
+        <item>HIGH_LOW_SEASHORE</item>
         <item>LADDER</item>
         <item>EMPTY</item>
         <item>RIGHT_W</item>
@@ -72,7 +72,7 @@
         <item>EMPTY</item>
         <item>LADDER</item>
         <item>MAJOR_MINOR</item>
-        <item>HIGH_LOW</item>
+        <item>LOUD_QUIET_SEASHORE</item>
         <item>INVERSION</item>
         <item>EMPTY</item>
         <item>RIGHT_W</item>
@@ -81,7 +81,7 @@
         <item>EMPTY</item>
         <item>INTERVAL</item>
         <item>INVERSION</item>
-        <item>HIGH_LOW</item>
+        <item>LONG_SHORT_SEASHORE</item>
         <item>MAJOR_MINOR</item>
         <item>EMPTY</item>
         <item>FINISH</item>
@@ -91,7 +91,7 @@
         <item>INVERSION</item>
         <item>LADDER</item>
         <item>EMPTY</item>
-        <item>HIGH_LOW</item>
+        <item>HIGH_LOW_SEASHORE</item>
         <item>MAJOR_MINOR</item>
         <item>EMPTY</item>
         <item>LADDER</item>
@@ -128,7 +128,7 @@
         <item>EMPTY</item>
         <item>INTERVAL</item>
         <item>EMPTY</item>
-        <item>HIGH_LOW</item>
+        <item>HIGH_LOW_SEASHORE</item>
         <item>EMPTY</item>
         <item>EMPTY</item>
         <item>FINISH</item>

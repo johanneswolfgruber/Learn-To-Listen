@@ -40,8 +40,10 @@ public class GameActivity extends AppCompatActivity{
     private TextView mTimeRemainingTextView, mScoreTextView, mLevelTextView, mFieldCounter,
             mExerciseCounter;
     private Dialog mGameOverDialog, mNextLevelDialog;
-    private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor;
-    private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs;
+    private int mRandHighLow, mRandInterval, mRandInversion, mRandIntervalHighLow, mRandMajorMinor,
+            mRandSeashoreHighLow, mRandSeashoreLoudQuiet, mRandSeashoreLongShort;
+    private int[] highLowIDs, intervalIDs, inversionsIDs, intervalHighLowIDs, majorMinorIDs,
+            seashoreHighLowIDs, seashoreLoudQuietIDs, seashoreLongShortIDs;
     private static String[] sLevelOne, sLevelTwo, sLevelThree;
     private int mPoints = 0;
     private int mLevelID = 1;
@@ -477,6 +479,81 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
+    private void testAnswerSeashoreHighLow(String answer) {
+        if(Objects.equals(answer, "Higher_Seashore") &&
+                (mRandSeashoreHighLow == mSound.getSoundIDhigher())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else if(Objects.equals(answer, "Lower_Seashore") &&
+                (mRandSeashoreHighLow == mSound.getSoundIDlower() )) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            wrongCounter();
+            mSound.playSound(mSound.getSoundIDWrongAnswer(), mVol);
+        }
+    }
+
+    private void testAnswerSeashoreLongShort(String answer) {
+        if(Objects.equals(answer, "Longer") &&
+                (mRandSeashoreLongShort == mSound.getSoundIDlonger())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else if(Objects.equals(answer, "Shorter") &&
+                (mRandSeashoreLongShort == mSound.getSoundIDshorter() )) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            wrongCounter();
+            mSound.playSound(mSound.getSoundIDWrongAnswer(), mVol);
+        }
+    }
+
+    private void testAnswerSeashoreLoudQuiet(String answer) {
+        if(Objects.equals(answer, "Louder") &&
+                (mRandSeashoreLoudQuiet == mSound.getSoundIDlouder())) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else if(Objects.equals(answer, "Quieter") &&
+                (mRandSeashoreLoudQuiet == mSound.getSoundIDquieter() )) {
+            mLevel.setCurrentFieldValue(mIndex, "CORRECT");
+            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            exerciseCounter();
+            mSound.playSound(mSound.getSoundIDRightAnswer(), mVol);
+            mPoints += 100;
+            mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
+        } else {
+            mLevel.setCurrentFieldValue(mIndex, "WRONG");
+            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            wrongCounter();
+            mSound.playSound(mSound.getSoundIDWrongAnswer(), mVol);
+        }
+    }
+
     public void switchKey(String currentFieldValue){
         switch (currentFieldValue) {
             case "LEFT_W":
@@ -611,6 +688,81 @@ public class GameActivity extends AppCompatActivity{
                 });
                 fieldCounter();
                 break;
+            case "HIGH_LOW_SEASHORE":
+                if(checkForLadder()) {
+                    mSound.playSound(mSound.getSoundIDexerciseDown(), mVol);
+                } else {
+                    mSound.playSound(mSound.getSoundIDExercise(), mVol);
+                }
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.startAnimation(mAnimationBlinking);
+                mVibrator.vibrate(100);
+                mClickID = 0;
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mClickID == 0) {
+                            mRandSeashoreHighLow =
+                                    seashoreHighLowIDs[randNumber(seashoreHighLowIDs.length)];
+                            mSound.playSound(mRandSeashoreHighLow, mVol);
+                            DialogFragment mDialog = new SeashoreHighLowDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mClickID = 1;
+                        }
+                    }
+                });
+                fieldCounter();
+                break;
+            case "LONG_SHORT_SEASHORE":
+                if(checkForLadder()) {
+                    mSound.playSound(mSound.getSoundIDexerciseDown(), mVol);
+                } else {
+                    mSound.playSound(mSound.getSoundIDExercise(), mVol);
+                }
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.startAnimation(mAnimationBlinking);
+                mVibrator.vibrate(100);
+                mClickID = 0;
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mClickID == 0) {
+                            mRandSeashoreLongShort =
+                                    seashoreLongShortIDs[randNumber(seashoreLongShortIDs.length)];
+                            mSound.playSound(mRandSeashoreLongShort, mVol);
+                            DialogFragment mDialog = new SeashoreLongShortDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mClickID = 1;
+                        }
+                    }
+                });
+                fieldCounter();
+                break;
+            case "LOUD_QUIET_SEASHORE":
+                if(checkForLadder()) {
+                    mSound.playSound(mSound.getSoundIDexerciseDown(), mVol);
+                } else {
+                    mSound.playSound(mSound.getSoundIDExercise(), mVol);
+                }
+                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.startAnimation(mAnimationBlinking);
+                mVibrator.vibrate(100);
+                mClickID = 0;
+                mIcon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mClickID == 0) {
+                            mRandSeashoreLoudQuiet =
+                                    seashoreLoudQuietIDs[randNumber(seashoreLoudQuietIDs.length)];
+                            mSound.playSound(mRandSeashoreLoudQuiet, mVol);
+                            DialogFragment mDialog = new SeashoreLoudQuietDialogFragment();
+                            mDialog.show(getFragmentManager(), "DialogFragment");
+                            mClickID = 1;
+                        }
+                    }
+                });
+                fieldCounter();
+                break;
             case "LADDER":
                 mSound.playSound(mSound.getSoundIDLadder(), mVol);
                 mIcon.setImageResource(R.drawable.ic_arrow_upward_black_48dp);
@@ -644,7 +796,7 @@ public class GameActivity extends AppCompatActivity{
                         mTempPoints = mPoints;
                         if(mClickID == 0) {
                             if(mDoorID <= 2) {
-                                int mRandExercise = randNumber(4);
+                                int mRandExercise = randNumber(7);
                                 startExerciseDoor(mRandExercise);
                             } else {
                                 mClickID = 1;
@@ -936,6 +1088,12 @@ public class GameActivity extends AppCompatActivity{
 
         majorMinorIDs = new int[]{mSound.getSoundIDmajor1(), mSound.getSoundIDminor1(),
                 mSound.getSoundIDaugmented1(), mSound.getSoundIDdiminished1()};
+
+        seashoreHighLowIDs = new int[]{mSound.getSoundIDhigher(), mSound.getSoundIDlower()};
+
+        seashoreLongShortIDs = new int[]{mSound.getSoundIDlonger(), mSound.getSoundIDshorter()};
+
+        seashoreLoudQuietIDs = new int[]{mSound.getSoundIDlouder(), mSound.getSoundIDquieter()};
     }
 
     /*
@@ -1000,6 +1158,18 @@ public class GameActivity extends AppCompatActivity{
             case "Bigger":
             case "Smaller":
                 testAnswerIntervalHigherLower(answer);
+                break;
+            case "Higher_Seashore":
+            case "Lower_Seashore":
+                testAnswerSeashoreHighLow(answer);
+                break;
+            case "Louder":
+            case "Quieter":
+                testAnswerSeashoreLoudQuiet(answer);
+                break;
+            case "Longer":
+            case "Shorter":
+                testAnswerSeashoreLongShort(answer);
                 break;
         }
     }
@@ -1142,6 +1312,9 @@ public class GameActivity extends AppCompatActivity{
         mRandIntervalHighLow =
                 intervalHighLowIDs[randNumber(intervalHighLowIDs.length)];
         mRandMajorMinor = majorMinorIDs[randNumber(majorMinorIDs.length)];
+        mRandSeashoreHighLow = seashoreHighLowIDs[randNumber(seashoreHighLowIDs.length)];
+        mRandSeashoreLoudQuiet = seashoreLoudQuietIDs[randNumber(seashoreLoudQuietIDs.length)];
+        mRandSeashoreLongShort = seashoreLongShortIDs[randNumber(seashoreLongShortIDs.length)];
         switch (exercise) {
             case 0:
                 mSound.playSound(mRandHighLow, mVol);
@@ -1167,6 +1340,21 @@ public class GameActivity extends AppCompatActivity{
                 mSound.playSound(mRandMajorMinor, mVol);
                 DialogFragment mDialog4 = new DoorDialog4Fragment();
                 mDialog4.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 5:
+                mSound.playSound(mRandSeashoreHighLow, mVol);
+                DialogFragment mDialog5 = new DoorDialog5Fragment();
+                mDialog5.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 6:
+                mSound.playSound(mRandSeashoreLongShort, mVol);
+                DialogFragment mDialog6 = new DoorDialog6Fragment();
+                mDialog6.show(getFragmentManager(), "DialogFragment");
+                break;
+            case 7:
+                mSound.playSound(mRandSeashoreLoudQuiet, mVol);
+                DialogFragment mDialog7 = new DoorDialog7Fragment();
+                mDialog7.show(getFragmentManager(), "DialogFragment");
                 break;
         }
     }
