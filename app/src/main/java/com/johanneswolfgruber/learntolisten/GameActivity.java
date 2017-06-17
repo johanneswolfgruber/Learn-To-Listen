@@ -105,7 +105,11 @@ public class GameActivity extends AppCompatActivity{
 
         initAnimations();
         initWidgets();
-        initTimer();
+        if(MainMenuActivity.sModeID == 0) {
+            initTimer();
+        } else {
+            mTimeRemainingTextView.setText("inf");
+        }
 
         mLevelTextView.setText(String.format(Locale.getDefault(), "Level %d", mLevelID));
         mIndex = 0;
@@ -906,11 +910,13 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                     }
                 });
-                mTimer.cancel();
+                if(MainMenuActivity.sModeID == 0) {
+                    mTimer.cancel();
+                    String mRemainingTime = mTimeRemainingTextView.getText().toString();
+                    int mRemainingTimeBonusPoints = Integer.parseInt(mRemainingTime)*10;
+                    mPoints += mRemainingTimeBonusPoints;
+                }
                 mSound.playSound(mSound.getSoundIDlevelfinish(), mVol);
-                String mRemainingTime = mTimeRemainingTextView.getText().toString();
-                int mRemainingTimeBonusPoints = Integer.parseInt(mRemainingTime)*10;
-                mPoints += mRemainingTimeBonusPoints;
                 mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
                 setResult(mPoints);
                 nothingClickable();

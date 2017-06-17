@@ -12,6 +12,8 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -21,8 +23,10 @@ public class MainMenuActivity extends AppCompatActivity{
     //private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
+    private Switch mSwitch;
     private Sound mSound;
     private float mVol = 1.0f;
+    static int sModeID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,20 @@ public class MainMenuActivity extends AppCompatActivity{
         mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
         mAnimationBlinking = AnimationUtils.loadAnimation(this, R.anim.blinking);
         mHigh = (TextView) findViewById(R.id.highscore_text_view);
+        mSwitch = (Switch) findViewById(R.id.switch_tutorial_mode);
+        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    mSwitch.setText("Tutorial Mode  ");
+                    sModeID = 1;
+                } else {
+                    mSwitch.setText("Normal Mode  ");
+                    sModeID = 0;
+                }
+            }
+        });
+
         mSound = new Sound();
         mSound.initSounds(this);
 
@@ -106,7 +124,7 @@ public class MainMenuActivity extends AppCompatActivity{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == 1) {
+        if(requestCode == 1 && sModeID == 0) {
             if(resultCode > readHighscore()) {
                 writeHighscore(resultCode);
                 mHigh.startAnimation(mAnimationBlinking);
