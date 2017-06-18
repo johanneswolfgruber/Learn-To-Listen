@@ -10,10 +10,13 @@ class Sound {
     private SoundPool mSoundPool;
     private int soundIDSteps, soundIDwallLeft, soundIDExercise, soundIDLadder, soundIDDoor,
             soundIDLadderDown, soundIDhigher1, soundIDhigher2, soundIDhigher3, soundIDlower1,
-            soundIDlower2, soundIDlower3, soundIDRightAnswer, soundIDWrongAnswer, soundIDunison,
-            soundIDminorSecond, soundIDmajorSecond, soundIDminorThird, soundIDmajorThird,
-            soundIDfourth, soundIDtritone, soundIDfifth, soundIDminorSixth, soundIDmajorSixth,
-            soundIDminorSeventh, soundIDmajorSeventh, soundIDoctave, soundIDcommon_chord,
+            soundIDlower2, soundIDlower3, soundIDRightAnswer, soundIDWrongAnswer, soundIDunisonC3,
+            soundIDminorSecondC3, soundIDmajorSecondC3, soundIDminorThirdC3, soundIDmajorThirdC3,
+            soundIDfourthC3, soundIDtritoneC3, soundIDfifthC3, soundIDminorSixthC3, soundIDmajorSixthC3,
+            soundIDminorSeventhC3, soundIDmajorSeventhC3, soundIDoctaveC3, soundIDunisonCis3,
+            soundIDminorSecondCis3, soundIDmajorSecondCis3, soundIDminorThirdCis3, soundIDmajorThirdCis3,
+            soundIDfourthCis3, soundIDtritoneCis3, soundIDfifthCis3, soundIDminorSixthCis3, soundIDmajorSixthCis3,
+            soundIDminorSeventhCis3, soundIDmajorSeventhCis3, soundIDoctaveCis3, soundIDcommon_chord,
             soundIDfirst_inversion, soundIDsecond_inversion, soundIDcommon_chord_min,
             soundIDfirst_inversion_min, soundIDsecond_inversion_min, soundIDmajor1, soundIDminor1,
             soundIDdiminished1, soundIDaugmented1, soundIDintervalHigher1, soundIDintervalHigher2,
@@ -85,19 +88,33 @@ class Sound {
         soundIDlower = mSoundPool.load(context, R.raw.lower, 0);
 
         // Interval
-        soundIDunison = mSoundPool.load(context, R.raw.perfect_unison_root_c3, 0);
-        soundIDminorSecond = mSoundPool.load(context, R.raw.minor_second_root_c3, 0);
-        soundIDmajorSecond = mSoundPool.load(context, R.raw.major_second_root_c3, 0);
-        soundIDminorThird = mSoundPool.load(context, R.raw.minor_third_root_c3, 0);
-        soundIDmajorThird = mSoundPool.load(context, R.raw.major_third_root_c3, 0);
-        soundIDfourth = mSoundPool.load(context, R.raw.perfect_fourth_root_c3, 0);
-        soundIDtritone = mSoundPool.load(context, R.raw.tritone_root_c3, 0);
-        soundIDfifth = mSoundPool.load(context, R.raw.perfect_fifth_root_c3, 0);
-        soundIDminorSixth = mSoundPool.load(context, R.raw.minor_sixth_root_c3, 0);
-        soundIDmajorSixth = mSoundPool.load(context, R.raw.major_sixth_root_c3, 0);
-        soundIDminorSeventh = mSoundPool.load(context, R.raw.minor_seventh_root_c3, 0);
-        soundIDmajorSeventh = mSoundPool.load(context, R.raw.major_seventh_root_c3, 0);
-        soundIDoctave = mSoundPool.load(context, R.raw.perfect_octave_root_c3, 0);
+        soundIDunisonC3 = mSoundPool.load(context, R.raw.perfect_unison_root_c3, 0);
+        soundIDminorSecondC3 = mSoundPool.load(context, R.raw.minor_second_root_c3, 0);
+        soundIDmajorSecondC3 = mSoundPool.load(context, R.raw.major_second_root_c3, 0);
+        soundIDminorThirdC3 = mSoundPool.load(context, R.raw.minor_third_root_c3, 0);
+        soundIDmajorThirdC3 = mSoundPool.load(context, R.raw.major_third_root_c3, 0);
+        soundIDfourthC3 = mSoundPool.load(context, R.raw.perfect_fourth_root_c3, 0);
+        soundIDtritoneC3 = mSoundPool.load(context, R.raw.tritone_root_c3, 0);
+        soundIDfifthC3 = mSoundPool.load(context, R.raw.perfect_fifth_root_c3, 0);
+        soundIDminorSixthC3 = mSoundPool.load(context, R.raw.minor_sixth_root_c3, 0);
+        soundIDmajorSixthC3 = mSoundPool.load(context, R.raw.major_sixth_root_c3, 0);
+        soundIDminorSeventhC3 = mSoundPool.load(context, R.raw.minor_seventh_root_c3, 0);
+        soundIDmajorSeventhC3 = mSoundPool.load(context, R.raw.major_seventh_root_c3, 0);
+        soundIDoctaveC3 = mSoundPool.load(context, R.raw.perfect_octave_root_c3, 0);
+
+        soundIDunisonCis3 = mSoundPool.load(context, R.raw.perfect_unison_root_cis3, 0);
+        soundIDminorSecondCis3 = mSoundPool.load(context, R.raw.minor_second_root_cis3, 0);
+        soundIDmajorSecondCis3 = mSoundPool.load(context, R.raw.major_second_root_cis3, 0);
+        soundIDminorThirdCis3 = mSoundPool.load(context, R.raw.minor_third_root_cis3, 0);
+        soundIDmajorThirdCis3 = mSoundPool.load(context, R.raw.major_third_root_cis3, 0);
+        soundIDfourthCis3 = mSoundPool.load(context, R.raw.perfect_fourth_root_cis3, 0);
+        soundIDtritoneCis3 = mSoundPool.load(context, R.raw.tritone_root_cis3, 0);
+        soundIDfifthCis3 = mSoundPool.load(context, R.raw.perfect_fifth_root_cis3, 0);
+        soundIDminorSixthCis3 = mSoundPool.load(context, R.raw.minor_sixth_root_cis3, 0);
+        soundIDmajorSixthCis3 = mSoundPool.load(context, R.raw.major_sixth_root_cis3, 0);
+        soundIDminorSeventhCis3 = mSoundPool.load(context, R.raw.minor_seventh_root_cis3, 0);
+        soundIDmajorSeventhCis3 = mSoundPool.load(context, R.raw.major_seventh_root_cis3, 0);
+        soundIDoctaveCis3 = mSoundPool.load(context, R.raw.perfect_octave_root_cis3, 0);
 
         // Inversions
         soundIDcommon_chord = mSoundPool.load(context, R.raw.common_chord_root_c3, 0);
@@ -256,56 +273,108 @@ class Sound {
         return soundIDWrongAnswer;
     }
 
-    int getSoundIDunison() {
-        return soundIDunison;
+    int getSoundIDunisonC3() {
+        return soundIDunisonC3;
     }
 
-    int getSoundIDminorSecond() {
-        return soundIDminorSecond;
+    int getSoundIDminorSecondC3() {
+        return soundIDminorSecondC3;
     }
 
-    int getSoundIDmajorSecond() {
-        return soundIDmajorSecond;
+    int getSoundIDmajorSecondC3() {
+        return soundIDmajorSecondC3;
     }
 
-    int getSoundIDminorThird() {
-        return soundIDminorThird;
+    int getSoundIDminorThirdC3() {
+        return soundIDminorThirdC3;
     }
 
-    int getSoundIDmajorThird() {
-        return soundIDmajorThird;
+    int getSoundIDmajorThirdC3() {
+        return soundIDmajorThirdC3;
     }
 
-    int getSoundIDfourth() {
-        return soundIDfourth;
+    int getSoundIDfourthC3() {
+        return soundIDfourthC3;
     }
 
-    int getSoundIDtritone() {
-        return soundIDtritone;
+    int getSoundIDtritoneC3() {
+        return soundIDtritoneC3;
     }
 
-    int getSoundIDfifth() {
-        return soundIDfifth;
+    int getSoundIDfifthC3() {
+        return soundIDfifthC3;
     }
 
-    int getSoundIDminorSixth() {
-        return soundIDminorSixth;
+    int getSoundIDminorSixthC3() {
+        return soundIDminorSixthC3;
     }
 
-    int getSoundIDmajorSixth() {
-        return soundIDmajorSixth;
+    int getSoundIDmajorSixthC3() {
+        return soundIDmajorSixthC3;
     }
 
-    int getSoundIDminorSeventh() {
-        return soundIDminorSeventh;
+    int getSoundIDminorSeventhC3() {
+        return soundIDminorSeventhC3;
     }
 
-    int getSoundIDmajorSeventh() {
-        return soundIDmajorSeventh;
+    int getSoundIDmajorSeventhC3() {
+        return soundIDmajorSeventhC3;
     }
 
-    int getSoundIDoctave() {
-        return soundIDoctave;
+    int getSoundIDoctaveC3() {
+        return soundIDoctaveC3;
+    }
+
+    int getSoundIDunisonCis3() {
+        return soundIDunisonCis3;
+    }
+
+    int getSoundIDminorSecondCis3() {
+        return soundIDminorSecondCis3;
+    }
+
+    int getSoundIDmajorSecondCis3() {
+        return soundIDmajorSecondCis3;
+    }
+
+    int getSoundIDminorThirdCis3() {
+        return soundIDminorThirdCis3;
+    }
+
+    int getSoundIDmajorThirdCis3() {
+        return soundIDmajorThirdCis3;
+    }
+
+    int getSoundIDfourthCis3() {
+        return soundIDfourthCis3;
+    }
+
+    int getSoundIDtritoneCis3() {
+        return soundIDtritoneCis3;
+    }
+
+    int getSoundIDfifthCis3() {
+        return soundIDfifthCis3;
+    }
+
+    int getSoundIDminorSixthCis3() {
+        return soundIDminorSixthCis3;
+    }
+
+    int getSoundIDmajorSixthCis3() {
+        return soundIDmajorSixthCis3;
+    }
+
+    int getSoundIDminorSeventhCis3() {
+        return soundIDminorSeventhCis3;
+    }
+
+    int getSoundIDmajorSeventhCis3() {
+        return soundIDmajorSeventhCis3;
+    }
+
+    int getSoundIDoctaveCis3() {
+        return soundIDoctaveCis3;
     }
 
     int getSoundIDcommon_chord() {
