@@ -29,9 +29,12 @@ class Sound {
             soundIDgameover, soundIDlevelfinish, soundIDnewgame,
             soundIDbutton, soundIDwallRight, soundIDcountdown, soundIDexerciseDown,
             soundIDfinish, soundIDlouder, soundIDquieter, soundIDlonger, soundIDshorter,
-            soundIDhigher, soundIDlower;
+            soundIDhigher, soundIDlower, soundIDunisonF2, soundIDminorSecondF2, soundIDmajorSecondF2,
+            soundIDminorThirdF2, soundIDmajorThirdF2, soundIDfourthF2, soundIDtritoneF2, soundIDfifthF2,
+            soundIDminorSixthF2, soundIDmajorSixthF2, soundIDminorSeventhF2, soundIDmajorSeventhF2,
+            soundIDoctaveF2;
 
-    
+
     void initSounds(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             AudioAttributes attributes = new AudioAttributes.Builder()
@@ -51,6 +54,7 @@ class Sound {
 
 
     }
+
 
     private void loadSounds(Context context) {
         // Gamesounds
@@ -88,6 +92,20 @@ class Sound {
         soundIDlower = mSoundPool.load(context, R.raw.lower, 0);
 
         // Interval
+        soundIDunisonF2 = mSoundPool.load(context, R.raw.perfect_unison_root_f2, 0);
+        soundIDminorSecondF2 = mSoundPool.load(context, R.raw.minor_second_root_f2, 0);
+        soundIDmajorSecondF2 = mSoundPool.load(context, R.raw.major_second_root_f2, 0);
+        soundIDminorThirdF2 = mSoundPool.load(context, R.raw.minor_third_root_f2, 0);
+        soundIDmajorThirdF2 = mSoundPool.load(context, R.raw.major_third_root_f2, 0);
+        soundIDfourthF2 = mSoundPool.load(context, R.raw.perfect_fourth_root_f2, 0);
+        soundIDtritoneF2 = mSoundPool.load(context, R.raw.tritone_root_f2, 0);
+        soundIDfifthF2 = mSoundPool.load(context, R.raw.perfect_fifth_root_f2, 0);
+        soundIDminorSixthF2 = mSoundPool.load(context, R.raw.minor_sixth_root_f2, 0);
+        soundIDmajorSixthF2 = mSoundPool.load(context, R.raw.major_sixth_root_f2, 0);
+        soundIDminorSeventhF2 = mSoundPool.load(context, R.raw.minor_seventh_root_f2, 0);
+        soundIDmajorSeventhF2 = mSoundPool.load(context, R.raw.major_seventh_root_f2, 0);
+        soundIDoctaveF2 = mSoundPool.load(context, R.raw.perfect_octave_root_f2, 0);
+
         soundIDunisonC3 = mSoundPool.load(context, R.raw.perfect_unison_root_c3, 0);
         soundIDminorSecondC3 = mSoundPool.load(context, R.raw.minor_second_root_c3, 0);
         soundIDmajorSecondC3 = mSoundPool.load(context, R.raw.major_second_root_c3, 0);
@@ -213,6 +231,7 @@ class Sound {
         return soundIDfinish;
     }
 
+    /*
     int getSoundIDhigher1() {
         return soundIDhigher1;
     }
@@ -236,6 +255,7 @@ class Sound {
     int getSoundIDlower3() {
         return soundIDlower3;
     }
+    */
 
     int getSoundIDlouder() {
         return soundIDlouder;
@@ -375,6 +395,58 @@ class Sound {
 
     int getSoundIDoctaveCis3() {
         return soundIDoctaveCis3;
+    }
+
+    int getSoundIDunisonF2() {
+        return soundIDunisonF2;
+    }
+
+    int getSoundIDminorSecondF2() {
+        return soundIDminorSecondF2;
+    }
+
+    int getSoundIDmajorSecondF2() {
+        return soundIDmajorSecondF2;
+    }
+
+    int getSoundIDminorThirdF2() {
+        return soundIDminorThirdF2;
+    }
+
+    int getSoundIDmajorThirdF2() {
+        return soundIDmajorThirdF2;
+    }
+
+    int getSoundIDfourthF2() {
+        return soundIDfourthF2;
+    }
+
+    int getSoundIDtritoneF2() {
+        return soundIDtritoneF2;
+    }
+
+    int getSoundIDfifthF2() {
+        return soundIDfifthF2;
+    }
+
+    int getSoundIDminorSixthF2() {
+        return soundIDminorSixthF2;
+    }
+
+    int getSoundIDmajorSixthF2() {
+        return soundIDmajorSixthF2;
+    }
+
+    int getSoundIDminorSeventhF2() {
+        return soundIDminorSeventhF2;
+    }
+
+    int getSoundIDmajorSeventhF2() {
+        return soundIDmajorSeventhF2;
+    }
+
+    int getSoundIDoctaveF2() {
+        return soundIDoctaveF2;
     }
 
     int getSoundIDcommon_chord() {
