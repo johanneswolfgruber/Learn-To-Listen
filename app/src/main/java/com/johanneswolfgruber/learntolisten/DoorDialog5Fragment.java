@@ -11,7 +11,7 @@ import android.widget.ListView;
 @SuppressWarnings("ConstantConditions")
 public class DoorDialog5Fragment extends DialogFragment {
 
-    private String[] mAnswers = {"Higher_Seashore", "Lower_Seashore"};
+    private String[] mAnswers = {"Higher", "Lower"};
     private static Object sCheckedItem;
 
     @Override

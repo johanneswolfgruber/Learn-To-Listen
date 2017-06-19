@@ -29,6 +29,7 @@
     <string name="wrong_text">Wrong:</string>
     <string name="not_solved_text">Not Solved:</string>
     <string name="normal_mode">Normal Mode\ \ </string>
+    <string name="infinity">inf</string>
     <string-array name="LEVEL_ONE">
         <item>LEFT_W</item>
         <item>HIGH_LOW_SEASHORE</item>

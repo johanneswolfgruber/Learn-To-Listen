@@ -11,13 +11,13 @@ import android.widget.ListView;
 @SuppressWarnings("ConstantConditions")
 public class DoorDialog0Fragment extends DialogFragment {
 
-    private String[] mAnswers = {"Higher", "Lower"};
+    private String[] mAnswers = {"Louder", "Quieter"};
     private static Object sCheckedItem;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Was the second sound higher or lower pitch than the first one?")
+        builder.setTitle("Was the second sound louder or quieter than the first one?")
                 .setSingleChoiceItems(mAnswers, 0, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
