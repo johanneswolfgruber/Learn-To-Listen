@@ -27,8 +27,15 @@ class Sound {
             soundIDminorSixthFis2, soundIDmajorSixthFis2, soundIDminorSeventhFis2,
             soundIDmajorSeventhFis2, soundIDoctaveFis2;
     private int soundIDcommon_chord, soundIDfirst_inversion, soundIDsecond_inversion,
-            soundIDcommon_chord_min, soundIDfirst_inversion_min, soundIDsecond_inversion_min;
-    private int soundIDmajor1, soundIDminor1, soundIDdiminished1, soundIDaugmented1;
+            soundIDcommon_chord_min, soundIDfirst_inversion_min, soundIDsecond_inversion_min,
+            soundIDcommon_chordA2, soundIDfirst_inversionA2, soundIDsecond_inversionA2,
+            soundIDcommon_chord_minA2, soundIDfirst_inversion_minA2, soundIDsecond_inversion_minA2,
+            soundIDcommon_chordDis3, soundIDfirst_inversionDis3, soundIDsecond_inversionDis3,
+            soundIDcommon_chord_minDis3, soundIDfirst_inversion_minDis3,
+            soundIDsecond_inversion_minDis3;
+    private int soundIDmajor1, soundIDminor1, soundIDdiminished1, soundIDaugmented1,
+            soundIDmajorA2, soundIDminorA2, soundIDdiminishedA2, soundIDaugmentedA2,
+            soundIDmajorDis3, soundIDminorDis3, soundIDdiminishedDis3, soundIDaugmentedDis3;
     private int soundIDintervalHigher1, soundIDintervalHigher2, soundIDintervalHigher3,
             soundIDintervalHigher4, soundIDintervalHigher5, soundIDintervalHigher6,
             soundIDintervalHigher7, soundIDintervalHigher8, soundIDintervalHigher9,
@@ -152,11 +159,35 @@ class Sound {
         soundIDfirst_inversion_min = mSoundPool.load(context, R.raw.first_inversion_min_root_c3, 0);
         soundIDsecond_inversion_min = mSoundPool.load(context, R.raw.second_inversion_min_root_c3, 0);
 
+        soundIDcommon_chordA2 = mSoundPool.load(context, R.raw.common_chord_root_a2, 0);
+        soundIDfirst_inversionA2 = mSoundPool.load(context, R.raw.first_inversion_root_a2, 0);
+        soundIDsecond_inversionA2 = mSoundPool.load(context, R.raw.second_inversion_root_a2, 0);
+        soundIDcommon_chord_minA2 = mSoundPool.load(context, R.raw.common_chord_min_root_a2, 0);
+        soundIDfirst_inversion_minA2 = mSoundPool.load(context, R.raw.first_inversion_min_root_a2, 0);
+        soundIDsecond_inversion_minA2 = mSoundPool.load(context, R.raw.second_inversion_min_root_a2, 0);
+
+        soundIDcommon_chordDis3 = mSoundPool.load(context, R.raw.common_chord_root_dis3, 0);
+        soundIDfirst_inversionDis3 = mSoundPool.load(context, R.raw.first_inversion_root_dis3, 0);
+        soundIDsecond_inversionDis3 = mSoundPool.load(context, R.raw.second_inversion_root_dis3, 0);
+        soundIDcommon_chord_minDis3 = mSoundPool.load(context, R.raw.common_chord_min_root_dis3, 0);
+        soundIDfirst_inversion_minDis3 = mSoundPool.load(context, R.raw.first_inversion_min_root_dis3, 0);
+        soundIDsecond_inversion_minDis3 = mSoundPool.load(context, R.raw.second_inversion_min_root_dis3, 0);
+
         // Major_Minor
         soundIDmajor1 = mSoundPool.load(context, R.raw.major1_root_c3, 0);
         soundIDminor1 = mSoundPool.load(context, R.raw.minor1_root_c3, 0);
         soundIDdiminished1 = mSoundPool.load(context, R.raw.diminished1_root_c3, 0);
         soundIDaugmented1 = mSoundPool.load(context, R.raw.augmented1_root_c3, 0);
+
+        soundIDmajorA2 = mSoundPool.load(context, R.raw.major1_root_a2, 0);
+        soundIDminorA2 = mSoundPool.load(context, R.raw.minor1_root_a2, 0);
+        soundIDdiminishedA2 = mSoundPool.load(context, R.raw.diminished1_root_a2, 0);
+        soundIDaugmentedA2 = mSoundPool.load(context, R.raw.augmented1_root_a2, 0);
+
+        soundIDmajorDis3 = mSoundPool.load(context, R.raw.major1_root_dis3, 0);
+        soundIDminorDis3 = mSoundPool.load(context, R.raw.minor1_root_dis3, 0);
+        soundIDdiminishedDis3 = mSoundPool.load(context, R.raw.diminished1_root_dis3, 0);
+        soundIDaugmentedDis3 = mSoundPool.load(context, R.raw.augmented1_root_dis3, 0);
 
         // High_Low_Interval
         soundIDintervalHigher1 = mSoundPool.load(context, R.raw.interval_higher1_root_c3, 0);
@@ -513,6 +544,38 @@ class Sound {
         return soundIDaugmented1;
     }
 
+    int getSoundIDmajorA2() {
+        return soundIDmajorA2;
+    }
+
+    int getSoundIDminorA2() {
+        return soundIDminorA2;
+    }
+
+    int getSoundIDdiminishedA2() {
+        return soundIDdiminishedA2;
+    }
+
+    int getSoundIDaugmentedA2() {
+        return soundIDaugmentedA2;
+    }
+
+    int getSoundIDmajorDis3() {
+        return soundIDmajorDis3;
+    }
+
+    int getSoundIDminorDis3() {
+        return soundIDminorDis3;
+    }
+
+    int getSoundIDdiminishedDis3() {
+        return soundIDdiminishedDis3;
+    }
+
+    int getSoundIDaugmentedDis3() {
+        return soundIDaugmentedDis3;
+    }
+
     int getSoundIDintervalHigher1() {
         return soundIDintervalHigher1;
     }
@@ -547,6 +610,54 @@ class Sound {
 
     int getSoundIDsecond_inversion_min() {
         return soundIDsecond_inversion_min;
+    }
+
+    int getSoundIDcommon_chordA2() {
+        return soundIDcommon_chordA2;
+    }
+
+    int getSoundIDfirst_inversionA2() {
+        return soundIDfirst_inversionA2;
+    }
+
+    int getSoundIDsecond_inversionA2() {
+        return soundIDsecond_inversionA2;
+    }
+
+    int getSoundIDcommon_chord_minA2() {
+        return soundIDcommon_chord_minA2;
+    }
+
+    int getSoundIDfirst_inversion_minA2() {
+        return soundIDfirst_inversion_minA2;
+    }
+
+    int getSoundIDsecond_inversion_minA2() {
+        return soundIDsecond_inversion_minA2;
+    }
+
+    int getSoundIDcommon_chordDis3() {
+        return soundIDcommon_chordDis3;
+    }
+
+    int getSoundIDfirst_inversionDis3() {
+        return soundIDfirst_inversionDis3;
+    }
+
+    int getSoundIDsecond_inversionDis3() {
+        return soundIDsecond_inversionDis3;
+    }
+
+    int getSoundIDcommon_chord_minDis3() {
+        return soundIDcommon_chord_minDis3;
+    }
+
+    int getSoundIDfirst_inversion_minDis3() {
+        return soundIDfirst_inversion_minDis3;
+    }
+
+    int getSoundIDsecond_inversion_minDis3() {
+        return soundIDsecond_inversion_minDis3;
     }
 
     int getSoundIDintervalHigher4() {
