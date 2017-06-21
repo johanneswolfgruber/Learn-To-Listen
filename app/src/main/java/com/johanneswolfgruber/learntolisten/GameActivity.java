@@ -61,8 +61,8 @@ public class GameActivity extends AppCompatActivity{
         setContentView(R.layout.activity_game);
 
         //mTTS = new TextToSpeech(this, this);
-        mSound = new Sound();
-        mSound.initSounds(this);
+        mSound = MainMenuActivity.getSounds();
+        //mSound.initSounds(getApplicationContext());
         initSoundIDs();
         mLevel = new Level();
         startLevel(mLevelID);
@@ -1169,6 +1169,7 @@ public class GameActivity extends AppCompatActivity{
     @Override
     public void onResume() {
         super.onResume();
+        mSound = MainMenuActivity.getSounds();
         View v = findViewById(R.id.root_constraint_layout_game);
         v.startAnimation(mAnimationBlendIn);
         hideBars();
@@ -1176,14 +1177,21 @@ public class GameActivity extends AppCompatActivity{
 
     @Override
     public void onDestroy(){
-        mSound.getSoundPool().release();
         super.onDestroy();
+        mTimer.cancel();
     }
 
     @Override
     public void onPause(){
         super.onPause();
         hideBars();
+        mTimer.cancel();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        mTimer.cancel();
     }
 
     public void onUserSelectValue(String answer) {

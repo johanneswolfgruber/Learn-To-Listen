@@ -19,4 +19,8 @@
         <item name="android:background">@color/colorBackground</item>
     </style>
 
+    <style name="SplashTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
 </resources>

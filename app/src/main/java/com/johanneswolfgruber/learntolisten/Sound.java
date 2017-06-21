@@ -63,161 +63,155 @@ class Sound {
             mSoundPool = new SoundPool(2, AudioManager.STREAM_MUSIC, 0);
             loadSounds(context);
         }
-
-
     }
 
     private void loadSounds(Context context) {
         // Gamesounds
-        soundIDSteps = mSoundPool.load(context, R.raw.steps, 0);
-        soundIDwallLeft = mSoundPool.load(context, R.raw.left_wall, 0);
-        soundIDwallRight = mSoundPool.load(context, R.raw.right_wall, 0);
-        soundIDDoor = mSoundPool.load(context, R.raw.door, 0);
-        soundIDExercise = mSoundPool.load(context, R.raw.exercise, 0);
-        soundIDexerciseDown = mSoundPool.load(context, R.raw.exrercise_down, 0);
-        soundIDLadder = mSoundPool.load(context, R.raw.ladder, 0);
-        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder_down, 0);
-        soundIDRightAnswer = mSoundPool.load(context, R.raw.right, 0);
-        soundIDWrongAnswer = mSoundPool.load(context, R.raw.wrong, 0);
-        soundIDgameover = mSoundPool.load(context, R.raw.gameover, 0);
-        soundIDlevelfinish = mSoundPool.load(context, R.raw.level_finished, 0);
-        soundIDnewgame = mSoundPool.load(context, R.raw.new_game, 0);
-        soundIDbutton = mSoundPool.load(context, R.raw.button, 0);
-        soundIDcountdown = mSoundPool.load(context, R.raw.countdown, 0);
-        soundIDfinish = mSoundPool.load(context, R.raw.finish, 0);
+        soundIDSteps = mSoundPool.load(context, R.raw.steps, 1);
+        soundIDwallLeft = mSoundPool.load(context, R.raw.left_wall, 1);
+        soundIDwallRight = mSoundPool.load(context, R.raw.right_wall, 1);
+        soundIDDoor = mSoundPool.load(context, R.raw.door, 1);
+        soundIDExercise = mSoundPool.load(context, R.raw.exercise, 1);
+        soundIDexerciseDown = mSoundPool.load(context, R.raw.exrercise_down, 1);
+        soundIDLadder = mSoundPool.load(context, R.raw.ladder, 1);
+        soundIDLadderDown = mSoundPool.load(context, R.raw.ladder_down, 1);
+        soundIDRightAnswer = mSoundPool.load(context, R.raw.right, 1);
+        soundIDWrongAnswer = mSoundPool.load(context, R.raw.wrong, 1);
+        soundIDgameover = mSoundPool.load(context, R.raw.gameover, 1);
+        soundIDlevelfinish = mSoundPool.load(context, R.raw.level_finished, 1);
+        soundIDnewgame = mSoundPool.load(context, R.raw.new_game, 1);
+        soundIDbutton = mSoundPool.load(context, R.raw.button, 1);
+        soundIDcountdown = mSoundPool.load(context, R.raw.countdown, 1);
+        soundIDfinish = mSoundPool.load(context, R.raw.finish, 1);
 
         // Seashore
-        soundIDlouder = mSoundPool.load(context, R.raw.louder, 0);
-        soundIDquieter = mSoundPool.load(context, R.raw.quieter, 0);
-        soundIDlonger = mSoundPool.load(context, R.raw.longer, 0);
-        soundIDshorter = mSoundPool.load(context, R.raw.shorter, 0);
-        soundIDhigher = mSoundPool.load(context, R.raw.higher, 0);
-        soundIDlower = mSoundPool.load(context, R.raw.lower, 0);
+        soundIDlouder = mSoundPool.load(context, R.raw.louder, 1);
+        soundIDquieter = mSoundPool.load(context, R.raw.quieter, 1);
+        soundIDlonger = mSoundPool.load(context, R.raw.longer, 1);
+        soundIDshorter = mSoundPool.load(context, R.raw.shorter, 1);
+        soundIDhigher = mSoundPool.load(context, R.raw.higher, 1);
+        soundIDlower = mSoundPool.load(context, R.raw.lower, 1);
 
         // Interval
-        soundIDunisonF2 = mSoundPool.load(context, R.raw.perfect_unison_root_f2, 0);
-        soundIDminorSecondF2 = mSoundPool.load(context, R.raw.minor_second_root_f2, 0);
-        soundIDmajorSecondF2 = mSoundPool.load(context, R.raw.major_second_root_f2, 0);
-        soundIDminorThirdF2 = mSoundPool.load(context, R.raw.minor_third_root_f2, 0);
-        soundIDmajorThirdF2 = mSoundPool.load(context, R.raw.major_third_root_f2, 0);
-        soundIDfourthF2 = mSoundPool.load(context, R.raw.perfect_fourth_root_f2, 0);
-        soundIDtritoneF2 = mSoundPool.load(context, R.raw.tritone_root_f2, 0);
-        soundIDfifthF2 = mSoundPool.load(context, R.raw.perfect_fifth_root_f2, 0);
-        soundIDminorSixthF2 = mSoundPool.load(context, R.raw.minor_sixth_root_f2, 0);
-        soundIDmajorSixthF2 = mSoundPool.load(context, R.raw.major_sixth_root_f2, 0);
-        soundIDminorSeventhF2 = mSoundPool.load(context, R.raw.minor_seventh_root_f2, 0);
-        soundIDmajorSeventhF2 = mSoundPool.load(context, R.raw.major_seventh_root_f2, 0);
-        soundIDoctaveF2 = mSoundPool.load(context, R.raw.perfect_octave_root_f2, 0);
+        soundIDunisonF2 = mSoundPool.load(context, R.raw.perfect_unison_root_f2, 1);
+        soundIDminorSecondF2 = mSoundPool.load(context, R.raw.minor_second_root_f2, 1);
+        soundIDmajorSecondF2 = mSoundPool.load(context, R.raw.major_second_root_f2, 1);
+        soundIDminorThirdF2 = mSoundPool.load(context, R.raw.minor_third_root_f2, 1);
+        soundIDmajorThirdF2 = mSoundPool.load(context, R.raw.major_third_root_f2, 1);
+        soundIDfourthF2 = mSoundPool.load(context, R.raw.perfect_fourth_root_f2, 1);
+        soundIDtritoneF2 = mSoundPool.load(context, R.raw.tritone_root_f2, 1);
+        soundIDfifthF2 = mSoundPool.load(context, R.raw.perfect_fifth_root_f2, 1);
+        soundIDminorSixthF2 = mSoundPool.load(context, R.raw.minor_sixth_root_f2, 1);
+        soundIDmajorSixthF2 = mSoundPool.load(context, R.raw.major_sixth_root_f2, 1);
+        soundIDminorSeventhF2 = mSoundPool.load(context, R.raw.minor_seventh_root_f2, 1);
+        soundIDmajorSeventhF2 = mSoundPool.load(context, R.raw.major_seventh_root_f2, 1);
+        soundIDoctaveF2 = mSoundPool.load(context, R.raw.perfect_octave_root_f2, 1);
 
-        soundIDunisonFis2 = mSoundPool.load(context, R.raw.perfect_unison_root_fis2, 0);
-        soundIDminorSecondFis2 = mSoundPool.load(context, R.raw.minor_second_root_fis2, 0);
-        soundIDmajorSecondFis2 = mSoundPool.load(context, R.raw.major_second_root_fis2, 0);
-        soundIDminorThirdFis2 = mSoundPool.load(context, R.raw.minor_third_root_fis2, 0);
-        soundIDmajorThirdFis2 = mSoundPool.load(context, R.raw.major_third_root_fis2, 0);
-        soundIDfourthFis2 = mSoundPool.load(context, R.raw.perfect_fourth_root_fis2, 0);
-        soundIDtritoneFis2 = mSoundPool.load(context, R.raw.tritone_root_fis2, 0);
-        soundIDfifthFis2 = mSoundPool.load(context, R.raw.perfect_fifth_root_fis2, 0);
-        soundIDminorSixthFis2 = mSoundPool.load(context, R.raw.minor_sixth_root_fis2, 0);
-        soundIDmajorSixthFis2 = mSoundPool.load(context, R.raw.major_sixth_root_fis2, 0);
-        soundIDminorSeventhFis2 = mSoundPool.load(context, R.raw.minor_seventh_root_fis2, 0);
-        soundIDmajorSeventhFis2 = mSoundPool.load(context, R.raw.major_seventh_root_fis2, 0);
-        soundIDoctaveFis2 = mSoundPool.load(context, R.raw.perfect_octave_root_fis2, 0);
+        soundIDunisonFis2 = mSoundPool.load(context, R.raw.perfect_unison_root_fis2, 1);
+        soundIDminorSecondFis2 = mSoundPool.load(context, R.raw.minor_second_root_fis2, 1);
+        soundIDmajorSecondFis2 = mSoundPool.load(context, R.raw.major_second_root_fis2, 1);
+        soundIDminorThirdFis2 = mSoundPool.load(context, R.raw.minor_third_root_fis2, 1);
+        soundIDmajorThirdFis2 = mSoundPool.load(context, R.raw.major_third_root_fis2, 1);
+        soundIDfourthFis2 = mSoundPool.load(context, R.raw.perfect_fourth_root_fis2, 1);
+        soundIDtritoneFis2 = mSoundPool.load(context, R.raw.tritone_root_fis2, 1);
+        soundIDfifthFis2 = mSoundPool.load(context, R.raw.perfect_fifth_root_fis2, 1);
+        soundIDminorSixthFis2 = mSoundPool.load(context, R.raw.minor_sixth_root_fis2, 1);
+        soundIDmajorSixthFis2 = mSoundPool.load(context, R.raw.major_sixth_root_fis2, 1);
+        soundIDminorSeventhFis2 = mSoundPool.load(context, R.raw.minor_seventh_root_fis2, 1);
+        soundIDmajorSeventhFis2 = mSoundPool.load(context, R.raw.major_seventh_root_fis2, 1);
+        soundIDoctaveFis2 = mSoundPool.load(context, R.raw.perfect_octave_root_fis2, 1);
 
-        soundIDunisonC3 = mSoundPool.load(context, R.raw.perfect_unison_root_c3, 0);
-        soundIDminorSecondC3 = mSoundPool.load(context, R.raw.minor_second_root_c3, 0);
-        soundIDmajorSecondC3 = mSoundPool.load(context, R.raw.major_second_root_c3, 0);
-        soundIDminorThirdC3 = mSoundPool.load(context, R.raw.minor_third_root_c3, 0);
-        soundIDmajorThirdC3 = mSoundPool.load(context, R.raw.major_third_root_c3, 0);
-        soundIDfourthC3 = mSoundPool.load(context, R.raw.perfect_fourth_root_c3, 0);
-        soundIDtritoneC3 = mSoundPool.load(context, R.raw.tritone_root_c3, 0);
-        soundIDfifthC3 = mSoundPool.load(context, R.raw.perfect_fifth_root_c3, 0);
-        soundIDminorSixthC3 = mSoundPool.load(context, R.raw.minor_sixth_root_c3, 0);
-        soundIDmajorSixthC3 = mSoundPool.load(context, R.raw.major_sixth_root_c3, 0);
-        soundIDminorSeventhC3 = mSoundPool.load(context, R.raw.minor_seventh_root_c3, 0);
-        soundIDmajorSeventhC3 = mSoundPool.load(context, R.raw.major_seventh_root_c3, 0);
-        soundIDoctaveC3 = mSoundPool.load(context, R.raw.perfect_octave_root_c3, 0);
+        soundIDunisonC3 = mSoundPool.load(context, R.raw.perfect_unison_root_c3, 1);
+        soundIDminorSecondC3 = mSoundPool.load(context, R.raw.minor_second_root_c3, 1);
+        soundIDmajorSecondC3 = mSoundPool.load(context, R.raw.major_second_root_c3, 1);
+        soundIDminorThirdC3 = mSoundPool.load(context, R.raw.minor_third_root_c3, 1);
+        soundIDmajorThirdC3 = mSoundPool.load(context, R.raw.major_third_root_c3, 1);
+        soundIDfourthC3 = mSoundPool.load(context, R.raw.perfect_fourth_root_c3, 1);
+        soundIDtritoneC3 = mSoundPool.load(context, R.raw.tritone_root_c3, 1);
+        soundIDfifthC3 = mSoundPool.load(context, R.raw.perfect_fifth_root_c3, 1);
+        soundIDminorSixthC3 = mSoundPool.load(context, R.raw.minor_sixth_root_c3, 1);
+        soundIDmajorSixthC3 = mSoundPool.load(context, R.raw.major_sixth_root_c3, 1);
+        soundIDminorSeventhC3 = mSoundPool.load(context, R.raw.minor_seventh_root_c3, 1);
+        soundIDmajorSeventhC3 = mSoundPool.load(context, R.raw.major_seventh_root_c3, 1);
+        soundIDoctaveC3 = mSoundPool.load(context, R.raw.perfect_octave_root_c3, 1);
 
-        soundIDunisonCis3 = mSoundPool.load(context, R.raw.perfect_unison_root_cis3, 0);
-        soundIDminorSecondCis3 = mSoundPool.load(context, R.raw.minor_second_root_cis3, 0);
-        soundIDmajorSecondCis3 = mSoundPool.load(context, R.raw.major_second_root_cis3, 0);
-        soundIDminorThirdCis3 = mSoundPool.load(context, R.raw.minor_third_root_cis3, 0);
-        soundIDmajorThirdCis3 = mSoundPool.load(context, R.raw.major_third_root_cis3, 0);
-        soundIDfourthCis3 = mSoundPool.load(context, R.raw.perfect_fourth_root_cis3, 0);
-        soundIDtritoneCis3 = mSoundPool.load(context, R.raw.tritone_root_cis3, 0);
-        soundIDfifthCis3 = mSoundPool.load(context, R.raw.perfect_fifth_root_cis3, 0);
-        soundIDminorSixthCis3 = mSoundPool.load(context, R.raw.minor_sixth_root_cis3, 0);
-        soundIDmajorSixthCis3 = mSoundPool.load(context, R.raw.major_sixth_root_cis3, 0);
-        soundIDminorSeventhCis3 = mSoundPool.load(context, R.raw.minor_seventh_root_cis3, 0);
-        soundIDmajorSeventhCis3 = mSoundPool.load(context, R.raw.major_seventh_root_cis3, 0);
-        soundIDoctaveCis3 = mSoundPool.load(context, R.raw.perfect_octave_root_cis3, 0);
+        soundIDunisonCis3 = mSoundPool.load(context, R.raw.perfect_unison_root_cis3, 1);
+        soundIDminorSecondCis3 = mSoundPool.load(context, R.raw.minor_second_root_cis3, 1);
+        soundIDmajorSecondCis3 = mSoundPool.load(context, R.raw.major_second_root_cis3, 1);
+        soundIDminorThirdCis3 = mSoundPool.load(context, R.raw.minor_third_root_cis3, 1);
+        soundIDmajorThirdCis3 = mSoundPool.load(context, R.raw.major_third_root_cis3, 1);
+        soundIDfourthCis3 = mSoundPool.load(context, R.raw.perfect_fourth_root_cis3, 1);
+        soundIDtritoneCis3 = mSoundPool.load(context, R.raw.tritone_root_cis3, 1);
+        soundIDfifthCis3 = mSoundPool.load(context, R.raw.perfect_fifth_root_cis3, 1);
+        soundIDminorSixthCis3 = mSoundPool.load(context, R.raw.minor_sixth_root_cis3, 1);
+        soundIDmajorSixthCis3 = mSoundPool.load(context, R.raw.major_sixth_root_cis3, 1);
+        soundIDminorSeventhCis3 = mSoundPool.load(context, R.raw.minor_seventh_root_cis3, 1);
+        soundIDmajorSeventhCis3 = mSoundPool.load(context, R.raw.major_seventh_root_cis3, 1);
+        soundIDoctaveCis3 = mSoundPool.load(context, R.raw.perfect_octave_root_cis3, 1);
 
         // Inversions
-        soundIDcommon_chord = mSoundPool.load(context, R.raw.common_chord_root_c3, 0);
-        soundIDfirst_inversion = mSoundPool.load(context, R.raw.first_inversion_root_c3, 0);
-        soundIDsecond_inversion = mSoundPool.load(context, R.raw.second_inversion_root_c3, 0);
-        soundIDcommon_chord_min = mSoundPool.load(context, R.raw.common_chord_min_root_c3, 0);
-        soundIDfirst_inversion_min = mSoundPool.load(context, R.raw.first_inversion_min_root_c3, 0);
-        soundIDsecond_inversion_min = mSoundPool.load(context, R.raw.second_inversion_min_root_c3, 0);
+        soundIDcommon_chord = mSoundPool.load(context, R.raw.common_chord_root_c3, 1);
+        soundIDfirst_inversion = mSoundPool.load(context, R.raw.first_inversion_root_c3, 1);
+        soundIDsecond_inversion = mSoundPool.load(context, R.raw.second_inversion_root_c3, 1);
+        soundIDcommon_chord_min = mSoundPool.load(context, R.raw.common_chord_min_root_c3, 1);
+        soundIDfirst_inversion_min = mSoundPool.load(context, R.raw.first_inversion_min_root_c3, 1);
+        soundIDsecond_inversion_min = mSoundPool.load(context, R.raw.second_inversion_min_root_c3, 1);
 
-        soundIDcommon_chordA2 = mSoundPool.load(context, R.raw.common_chord_root_a2, 0);
-        soundIDfirst_inversionA2 = mSoundPool.load(context, R.raw.first_inversion_root_a2, 0);
-        soundIDsecond_inversionA2 = mSoundPool.load(context, R.raw.second_inversion_root_a2, 0);
-        soundIDcommon_chord_minA2 = mSoundPool.load(context, R.raw.common_chord_min_root_a2, 0);
-        soundIDfirst_inversion_minA2 = mSoundPool.load(context, R.raw.first_inversion_min_root_a2, 0);
-        soundIDsecond_inversion_minA2 = mSoundPool.load(context, R.raw.second_inversion_min_root_a2, 0);
+        soundIDcommon_chordA2 = mSoundPool.load(context, R.raw.common_chord_root_a2, 1);
+        soundIDfirst_inversionA2 = mSoundPool.load(context, R.raw.first_inversion_root_a2, 1);
+        soundIDsecond_inversionA2 = mSoundPool.load(context, R.raw.second_inversion_root_a2, 1);
+        soundIDcommon_chord_minA2 = mSoundPool.load(context, R.raw.common_chord_min_root_a2, 1);
+        soundIDfirst_inversion_minA2 = mSoundPool.load(context, R.raw.first_inversion_min_root_a2, 1);
+        soundIDsecond_inversion_minA2 = mSoundPool.load(context, R.raw.second_inversion_min_root_a2, 1);
 
-        soundIDcommon_chordDis3 = mSoundPool.load(context, R.raw.common_chord_root_dis3, 0);
-        soundIDfirst_inversionDis3 = mSoundPool.load(context, R.raw.first_inversion_root_dis3, 0);
-        soundIDsecond_inversionDis3 = mSoundPool.load(context, R.raw.second_inversion_root_dis3, 0);
-        soundIDcommon_chord_minDis3 = mSoundPool.load(context, R.raw.common_chord_min_root_dis3, 0);
-        soundIDfirst_inversion_minDis3 = mSoundPool.load(context, R.raw.first_inversion_min_root_dis3, 0);
-        soundIDsecond_inversion_minDis3 = mSoundPool.load(context, R.raw.second_inversion_min_root_dis3, 0);
+        soundIDcommon_chordDis3 = mSoundPool.load(context, R.raw.common_chord_root_dis3, 1);
+        soundIDfirst_inversionDis3 = mSoundPool.load(context, R.raw.first_inversion_root_dis3, 1);
+        soundIDsecond_inversionDis3 = mSoundPool.load(context, R.raw.second_inversion_root_dis3, 1);
+        soundIDcommon_chord_minDis3 = mSoundPool.load(context, R.raw.common_chord_min_root_dis3, 1);
+        soundIDfirst_inversion_minDis3 = mSoundPool.load(context, R.raw.first_inversion_min_root_dis3, 1);
+        soundIDsecond_inversion_minDis3 = mSoundPool.load(context, R.raw.second_inversion_min_root_dis3, 1);
 
         // Major_Minor
-        soundIDmajor1 = mSoundPool.load(context, R.raw.major1_root_c3, 0);
-        soundIDminor1 = mSoundPool.load(context, R.raw.minor1_root_c3, 0);
-        soundIDdiminished1 = mSoundPool.load(context, R.raw.diminished1_root_c3, 0);
-        soundIDaugmented1 = mSoundPool.load(context, R.raw.augmented1_root_c3, 0);
+        soundIDmajor1 = mSoundPool.load(context, R.raw.major1_root_c3, 1);
+        soundIDminor1 = mSoundPool.load(context, R.raw.minor1_root_c3, 1);
+        soundIDdiminished1 = mSoundPool.load(context, R.raw.diminished1_root_c3, 1);
+        soundIDaugmented1 = mSoundPool.load(context, R.raw.augmented1_root_c3, 1);
 
-        soundIDmajorA2 = mSoundPool.load(context, R.raw.major1_root_a2, 0);
-        soundIDminorA2 = mSoundPool.load(context, R.raw.minor1_root_a2, 0);
-        soundIDdiminishedA2 = mSoundPool.load(context, R.raw.diminished1_root_a2, 0);
-        soundIDaugmentedA2 = mSoundPool.load(context, R.raw.augmented1_root_a2, 0);
+        soundIDmajorA2 = mSoundPool.load(context, R.raw.major1_root_a2, 1);
+        soundIDminorA2 = mSoundPool.load(context, R.raw.minor1_root_a2, 1);
+        soundIDdiminishedA2 = mSoundPool.load(context, R.raw.diminished1_root_a2, 1);
+        soundIDaugmentedA2 = mSoundPool.load(context, R.raw.augmented1_root_a2, 1);
 
-        soundIDmajorDis3 = mSoundPool.load(context, R.raw.major1_root_dis3, 0);
-        soundIDminorDis3 = mSoundPool.load(context, R.raw.minor1_root_dis3, 0);
-        soundIDdiminishedDis3 = mSoundPool.load(context, R.raw.diminished1_root_dis3, 0);
-        soundIDaugmentedDis3 = mSoundPool.load(context, R.raw.augmented1_root_dis3, 0);
+        soundIDmajorDis3 = mSoundPool.load(context, R.raw.major1_root_dis3, 1);
+        soundIDminorDis3 = mSoundPool.load(context, R.raw.minor1_root_dis3, 1);
+        soundIDdiminishedDis3 = mSoundPool.load(context, R.raw.diminished1_root_dis3, 1);
+        soundIDaugmentedDis3 = mSoundPool.load(context, R.raw.augmented1_root_dis3, 1);
 
         // High_Low_Interval
-        soundIDintervalHigher1 = mSoundPool.load(context, R.raw.interval_higher1_root_c3, 0);
-        soundIDintervalHigher2 = mSoundPool.load(context, R.raw.interval_higher2_root_c3, 0);
-        soundIDintervalHigher3 = mSoundPool.load(context, R.raw.interval_higher3_root_c3, 0);
-        soundIDintervalHigher4 = mSoundPool.load(context, R.raw.interval_higher4_root_c3, 0);
-        soundIDintervalHigher5 = mSoundPool.load(context, R.raw.interval_higher5_root_c3, 0);
-        soundIDintervalHigher6 = mSoundPool.load(context, R.raw.interval_higher6_root_c3, 0);
-        soundIDintervalHigher7 = mSoundPool.load(context, R.raw.interval_higher7_root_c3, 0);
-        soundIDintervalHigher8 = mSoundPool.load(context, R.raw.interval_higher8_root_c3, 0);
-        soundIDintervalHigher9 = mSoundPool.load(context, R.raw.interval_higher9_root_c3, 0);
-        soundIDintervalHigher10 = mSoundPool.load(context, R.raw.interval_higher10_root_c3, 0);
-        soundIDintervalLower1 = mSoundPool.load(context, R.raw.interval_lower1_root_c3, 0);
-        soundIDintervalLower2 = mSoundPool.load(context, R.raw.interval_lower2_root_c3, 0);
-        soundIDintervalLower3 = mSoundPool.load(context, R.raw.interval_lower3_root_c3, 0);
-        soundIDintervalLower4 = mSoundPool.load(context, R.raw.interval_lower4_root_c3, 0);
-        soundIDintervalLower5 = mSoundPool.load(context, R.raw.interval_lower5_root_c3, 0);
-        soundIDintervalLower6 = mSoundPool.load(context, R.raw.interval_lower6_root_c3, 0);
-        soundIDintervalLower7 = mSoundPool.load(context, R.raw.interval_lower7_root_c3, 0);
-        soundIDintervalLower8 = mSoundPool.load(context, R.raw.interval_lower8_root_c3, 0);
-        soundIDintervalLower9 = mSoundPool.load(context, R.raw.interval_lower9_root_c3, 0);
-        soundIDintervalLower10 = mSoundPool.load(context, R.raw.interval_lower10_root_c3, 0);
+        soundIDintervalHigher1 = mSoundPool.load(context, R.raw.interval_higher1_root_c3, 1);
+        soundIDintervalHigher2 = mSoundPool.load(context, R.raw.interval_higher2_root_c3, 1);
+        soundIDintervalHigher3 = mSoundPool.load(context, R.raw.interval_higher3_root_c3, 1);
+        soundIDintervalHigher4 = mSoundPool.load(context, R.raw.interval_higher4_root_c3, 1);
+        soundIDintervalHigher5 = mSoundPool.load(context, R.raw.interval_higher5_root_c3, 1);
+        soundIDintervalHigher6 = mSoundPool.load(context, R.raw.interval_higher6_root_c3, 1);
+        soundIDintervalHigher7 = mSoundPool.load(context, R.raw.interval_higher7_root_c3, 1);
+        soundIDintervalHigher8 = mSoundPool.load(context, R.raw.interval_higher8_root_c3, 1);
+        soundIDintervalHigher9 = mSoundPool.load(context, R.raw.interval_higher9_root_c3, 1);
+        soundIDintervalHigher10 = mSoundPool.load(context, R.raw.interval_higher10_root_c3, 1);
+        soundIDintervalLower1 = mSoundPool.load(context, R.raw.interval_lower1_root_c3, 1);
+        soundIDintervalLower2 = mSoundPool.load(context, R.raw.interval_lower2_root_c3, 1);
+        soundIDintervalLower3 = mSoundPool.load(context, R.raw.interval_lower3_root_c3, 1);
+        soundIDintervalLower4 = mSoundPool.load(context, R.raw.interval_lower4_root_c3, 1);
+        soundIDintervalLower5 = mSoundPool.load(context, R.raw.interval_lower5_root_c3, 1);
+        soundIDintervalLower6 = mSoundPool.load(context, R.raw.interval_lower6_root_c3, 1);
+        soundIDintervalLower7 = mSoundPool.load(context, R.raw.interval_lower7_root_c3, 1);
+        soundIDintervalLower8 = mSoundPool.load(context, R.raw.interval_lower8_root_c3, 1);
+        soundIDintervalLower9 = mSoundPool.load(context, R.raw.interval_lower9_root_c3, 1);
+        soundIDintervalLower10 = mSoundPool.load(context, R.raw.interval_lower10_root_c3, 1);
     }
 
     void playSound(int soundID, float Vol){
         mSoundPool.play(soundID, Vol, Vol, 0, 0, 1);
-    }
-
-    SoundPool getSoundPool() {
-        return mSoundPool;
     }
 
     int getSoundIDSteps() {

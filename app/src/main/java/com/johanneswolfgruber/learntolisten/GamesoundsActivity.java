@@ -12,8 +12,6 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class GamesoundsActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
-    private ImageButton mImageButton1, mImageButton2, mImageButton3, mImageButton4, mImageButton5,
-            mImageButton6, mImageButton7, mImageButton8;
     private TextView mTextView1, mTextView2, mTextView3, mTextView4, mTextView5, mTextView6,
             mTextView7, mTextView8;
     private int mButton1ID = 0, mButton2ID = 0, mButton3ID = 0, mButton4ID = 0, mButton5ID = 0,
@@ -27,8 +25,8 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamesounds);
 
-        mSound = new Sound();
-        mSound.initSounds(this);
+        mSound = MainMenuActivity.getSounds();
+        //mSound.initSounds(this);
 
         mTTS = new TextToSpeech(this, this);
         mAnimationBlendIn = AnimationUtils.loadAnimation(this, R.anim.blend_in);
@@ -42,7 +40,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
         mTextView7 = (TextView) findViewById(R.id.textView7);
         mTextView8 = (TextView) findViewById(R.id.textView8);
 
-        mImageButton1 = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton mImageButton1 = (ImageButton) findViewById(R.id.imageButton);
         mImageButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +56,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        ImageButton mImageButton2 = (ImageButton) findViewById(R.id.imageButton2);
         mImageButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +72,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton3 = (ImageButton) findViewById(R.id.imageButton3);
+        ImageButton mImageButton3 = (ImageButton) findViewById(R.id.imageButton3);
         mImageButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,7 +88,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton4 = (ImageButton) findViewById(R.id.imageButton4);
+        ImageButton mImageButton4 = (ImageButton) findViewById(R.id.imageButton4);
         mImageButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +104,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton5 = (ImageButton) findViewById(R.id.imageButton5);
+        ImageButton mImageButton5 = (ImageButton) findViewById(R.id.imageButton5);
         mImageButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +120,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton6 = (ImageButton) findViewById(R.id.imageButton6);
+        ImageButton mImageButton6 = (ImageButton) findViewById(R.id.imageButton6);
         mImageButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,7 +136,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton7 = (ImageButton) findViewById(R.id.imageButton7);
+        ImageButton mImageButton7 = (ImageButton) findViewById(R.id.imageButton7);
         mImageButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +152,7 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
             }
         });
 
-        mImageButton8 = (ImageButton) findViewById(R.id.imageButton8);
+        ImageButton mImageButton8 = (ImageButton) findViewById(R.id.imageButton8);
         mImageButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,13 +177,13 @@ public class GamesoundsActivity extends AppCompatActivity implements TextToSpeec
     @Override
     public void onResume() {
         super.onResume();
+        mSound = MainMenuActivity.getSounds();
         View v = findViewById(R.id.root_constraint_layout_gamesounds);
         v.startAnimation(mAnimationBlendIn);
     }
 
     @Override
     public void onDestroy(){
-        mSound.getSoundPool().release();
         super.onDestroy();
     }
 }

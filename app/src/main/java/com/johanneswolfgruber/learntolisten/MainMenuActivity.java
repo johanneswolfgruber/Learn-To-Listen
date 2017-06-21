@@ -24,7 +24,7 @@ public class MainMenuActivity extends AppCompatActivity{
     private Animation mAnimationBlendIn, mAnimationBlinking;
     private TextView mHigh;
     private Switch mSwitch;
-    private Sound mSound;
+    private static Sound sSound;
     private final float VOL_GAME = 0.5f;
     static int sModeID;
 
@@ -44,23 +44,23 @@ public class MainMenuActivity extends AppCompatActivity{
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
-                    mSwitch.setText("Tutorial Mode  ");
+                    mSwitch.setText(R.string.tutorial_mode_text);
                     sModeID = 1;
                 } else {
-                    mSwitch.setText("Normal Mode  ");
+                    mSwitch.setText(R.string.normal_mode_text);
                     sModeID = 0;
                 }
             }
         });
 
-        mSound = new Sound();
-        mSound.initSounds(this);
+        sSound = new Sound();
+        sSound.initSounds(getApplicationContext());
 
         Button mNewGameButton = (Button) findViewById(R.id.new_game_button);
         mNewGameButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDnewgame(), VOL_GAME);
+                sSound.playSound(sSound.getSoundIDnewgame(), VOL_GAME);
                 //start GameActivity.java
                 Intent newGameIntent = new Intent(MainMenuActivity.this,
                         GameActivity.class);
@@ -72,7 +72,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mTutorialButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), VOL_GAME);
+                sSound.playSound(sSound.getSoundIDbutton(), VOL_GAME);
                 //start TutorialActivity.java
                 Intent tutorialIntent = new Intent(MainMenuActivity.this,
                         TutorialActivity.class);
@@ -84,7 +84,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mGamesoundsButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), VOL_GAME);
+                sSound.playSound(sSound.getSoundIDbutton(), VOL_GAME);
                 //start GamesoundsActivity.java
                 Intent gamesoundsIntent = new Intent(MainMenuActivity.this,
                         GamesoundsActivity.class);
@@ -96,7 +96,7 @@ public class MainMenuActivity extends AppCompatActivity{
         mResetHighscoreButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSound.playSound(mSound.getSoundIDbutton(), VOL_GAME);
+                sSound.playSound(sSound.getSoundIDbutton(), VOL_GAME);
                 DialogFragment mDialog = new ResetHighscore();
                 mDialog.show(getFragmentManager(), "DialogFragment");
             }
@@ -105,6 +105,11 @@ public class MainMenuActivity extends AppCompatActivity{
 
     public void onUserPositiveClick() {
         deleteHighscore();
+    }
+
+
+    public static Sound getSounds() {
+        return sSound;
     }
 
     /*
