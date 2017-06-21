@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-public class MainMenuActivity extends AppCompatActivity{
+public class MainMenuActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener{
 
     //private TextToSpeech mTTS;
     private Animation mAnimationBlendIn, mAnimationBlinking;
@@ -26,7 +26,7 @@ public class MainMenuActivity extends AppCompatActivity{
     private Switch mSwitch;
     private static Sound sSound;
     private final float VOL_GAME = 0.5f;
-    static int sModeID;
+    private static int sModeID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +40,10 @@ public class MainMenuActivity extends AppCompatActivity{
         mAnimationBlinking = AnimationUtils.loadAnimation(this, R.anim.blinking);
         mHigh = (TextView) findViewById(R.id.highscore_text_view);
         mSwitch = (Switch) findViewById(R.id.switch_tutorial_mode);
-        mSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
-                    mSwitch.setText(R.string.tutorial_mode_text);
-                    sModeID = 1;
-                } else {
-                    mSwitch.setText(R.string.normal_mode_text);
-                    sModeID = 0;
-                }
-            }
-        });
+
+        if (mSwitch != null) {
+            mSwitch.setOnCheckedChangeListener(this);    // note this
+        }
 
         sSound = new Sound();
         sSound.initSounds(getApplicationContext());
@@ -112,6 +104,10 @@ public class MainMenuActivity extends AppCompatActivity{
         return sSound;
     }
 
+    public static int getModeID() {
+        return sModeID;
+    }
+
     /*
     @Override
     public void onInit(int status) {
@@ -158,5 +154,16 @@ public class MainMenuActivity extends AppCompatActivity{
         editor.remove(getString(R.string.highscore));
         editor.apply();
         onResume();
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked) {
+            mSwitch.setText(R.string.tutorial_mode_text);
+            sModeID = 1;
+        } else {
+            mSwitch.setText(R.string.normal_mode_text);
+            sModeID = 0;
+        }
     }
 }

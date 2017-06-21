@@ -47,6 +47,7 @@ public class GameActivity extends AppCompatActivity{
     private static String[] sLevelOne, sLevelTwo, sLevelThree;
     private int mPoints = 0;
     private int mLevelID = 1;
+    private int mModeID;
     private Sound mSound;
     private Vibrator mVibrator;
     private Level mLevel;
@@ -62,6 +63,7 @@ public class GameActivity extends AppCompatActivity{
 
         //mTTS = new TextToSpeech(this, this);
         mSound = MainMenuActivity.getSounds();
+        mModeID = MainMenuActivity.getModeID();
         //mSound.initSounds(getApplicationContext());
         initSoundIDs();
         mLevel = new Level();
@@ -106,7 +108,7 @@ public class GameActivity extends AppCompatActivity{
 
         initAnimations();
         initWidgets();
-        if(MainMenuActivity.sModeID == 0) {
+        if(mModeID == 0) {
             initTimer();
         } else {
             mTimeRemainingTextView.setText(R.string.infinity);
@@ -917,7 +919,7 @@ public class GameActivity extends AppCompatActivity{
                     public void onClick(View v) {
                     }
                 });
-                if(MainMenuActivity.sModeID == 0) {
+                if(mModeID == 0) {
                     mTimer.cancel();
                     String mRemainingTime = mTimeRemainingTextView.getText().toString();
                     int mRemainingTimeBonusPoints = Integer.parseInt(mRemainingTime)*10;
@@ -1178,20 +1180,26 @@ public class GameActivity extends AppCompatActivity{
     @Override
     public void onDestroy(){
         super.onDestroy();
-        mTimer.cancel();
+        if(mModeID == 0) {
+            mTimer.cancel();
+        }
     }
 
     @Override
     public void onPause(){
         super.onPause();
         hideBars();
-        mTimer.cancel();
+        if(mModeID == 0) {
+            mTimer.cancel();
+        }
     }
 
     @Override
     public void onStop(){
         super.onStop();
-        mTimer.cancel();
+        if(mModeID == 0) {
+            mTimer.cancel();
+        }
     }
 
     public void onUserSelectValue(String answer) {
