@@ -48,7 +48,7 @@ class Level {
     int getExerciseCount(int level) {
         switch (level) {
             case 1:
-                return 11;
+                return 12;
             case 2:
                 return 12;
             case 3:
