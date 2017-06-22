@@ -6,6 +6,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/ic_hearing_black_48dp"/>
+            android:src="@drawable/ic_hearing_accent"/>
     </item>
 </layer-list>

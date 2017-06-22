@@ -220,7 +220,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDunisonCis3() ||
                 mRandInterval == mSound.getSoundIDunisonF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -232,7 +232,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDminorSecondCis3() ||
                 mRandInterval == mSound.getSoundIDminorSecondF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -244,7 +244,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDmajorSecondCis3() ||
                 mRandInterval == mSound.getSoundIDmajorSecondC3())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -256,7 +256,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDminorThirdCis3() ||
                 mRandInterval == mSound.getSoundIDminorThirdF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -268,7 +268,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDmajorThirdCis3() ||
                 mRandInterval == mSound.getSoundIDmajorThirdF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -280,7 +280,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDfourthCis3() ||
                 mRandInterval == mSound.getSoundIDfourthF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -292,7 +292,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDtritoneCis3() ||
                 mRandInterval == mSound.getSoundIDtritoneF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -304,7 +304,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDfifthCis3() ||
                 mRandInterval == mSound.getSoundIDfifthF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -316,7 +316,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDminorSixthCis3() ||
                 mRandInterval == mSound.getSoundIDminorSixthF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -328,7 +328,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDmajorSixthCis3() ||
                 mRandInterval == mSound.getSoundIDmajorSixthF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -340,7 +340,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDminorSeventhCis3() ||
                 mRandInterval == mSound.getSoundIDminorSeventhF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -352,7 +352,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDmajorSeventhCis3() ||
                 mRandInterval == mSound.getSoundIDmajorSeventhF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -364,7 +364,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandInterval == mSound.getSoundIDoctaveCis3() ||
                 mRandInterval == mSound.getSoundIDoctaveF2())){
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -372,7 +372,7 @@ public class GameActivity extends AppCompatActivity{
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             //Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
@@ -390,7 +390,7 @@ public class GameActivity extends AppCompatActivity{
                     mRandInversion == mSound.getSoundIDcommon_chord_minDis3() ||
                     mRandInversion == mSound.getSoundIDcommon_chord_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -404,7 +404,7 @@ public class GameActivity extends AppCompatActivity{
                     mRandInversion == mSound.getSoundIDfirst_inversion_minDis3() ||
                     mRandInversion == mSound.getSoundIDfirst_inversion_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -418,7 +418,7 @@ public class GameActivity extends AppCompatActivity{
                             mRandInversion == mSound.getSoundIDsecond_inversion_minDis3() ||
                     mRandInversion == mSound.getSoundIDsecond_inversion_min())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -426,7 +426,7 @@ public class GameActivity extends AppCompatActivity{
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             //Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
@@ -439,7 +439,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandMajorMinor == mSound.getSoundIDmajorA2() ||
                 mRandMajorMinor == mSound.getSoundIDmajorDis3())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -450,7 +450,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandMajorMinor == mSound.getSoundIDminorA2() ||
                 mRandMajorMinor == mSound.getSoundIDminorDis3())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -461,7 +461,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandMajorMinor == mSound.getSoundIDaugmentedA2() ||
                 mRandMajorMinor == mSound.getSoundIDaugmentedDis3())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -472,7 +472,7 @@ public class GameActivity extends AppCompatActivity{
                 mRandMajorMinor == mSound.getSoundIDdiminishedA2() ||
                 mRandMajorMinor == mSound.getSoundIDdiminishedDis3())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -480,7 +480,7 @@ public class GameActivity extends AppCompatActivity{
             mScoreTextView.setText(String.format(Locale.getDefault(), "%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             //Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
@@ -500,7 +500,7 @@ public class GameActivity extends AppCompatActivity{
                     mRandIntervalHighLow == mSound.getSoundIDintervalHigher9() ||
                     mRandIntervalHighLow == mSound.getSoundIDintervalHigher10())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -518,7 +518,7 @@ public class GameActivity extends AppCompatActivity{
                     mRandIntervalHighLow == mSound.getSoundIDintervalLower9() ||
                     mRandIntervalHighLow == mSound.getSoundIDintervalLower10())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             //Toast.makeText(GameActivity.this, "Correct", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
@@ -526,7 +526,7 @@ public class GameActivity extends AppCompatActivity{
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             //Toast.makeText(GameActivity.this, "Wrong", Toast.LENGTH_SHORT).show();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
@@ -537,7 +537,7 @@ public class GameActivity extends AppCompatActivity{
         if(Objects.equals(answer, "Higher") &&
                 (mRandSeashoreHighLow == mSound.getSoundIDhigher())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
@@ -545,14 +545,14 @@ public class GameActivity extends AppCompatActivity{
         } else if(Objects.equals(answer, "Lower") &&
                 (mRandSeashoreHighLow == mSound.getSoundIDlower() )) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
         }
@@ -562,7 +562,7 @@ public class GameActivity extends AppCompatActivity{
         if(Objects.equals(answer, "Longer") &&
                 (mRandSeashoreLongShort == mSound.getSoundIDlonger())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
@@ -570,14 +570,14 @@ public class GameActivity extends AppCompatActivity{
         } else if(Objects.equals(answer, "Shorter") &&
                 (mRandSeashoreLongShort == mSound.getSoundIDshorter() )) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
         }
@@ -587,7 +587,7 @@ public class GameActivity extends AppCompatActivity{
         if(Objects.equals(answer, "Louder") &&
                 (mRandSeashoreLoudQuiet == mSound.getSoundIDlouder())) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
@@ -595,14 +595,14 @@ public class GameActivity extends AppCompatActivity{
         } else if(Objects.equals(answer, "Quieter") &&
                 (mRandSeashoreLoudQuiet == mSound.getSoundIDquieter() )) {
             mLevel.setCurrentFieldValue(mIndex, "CORRECT");
-            mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_done_accent);
             exerciseCounter();
             mSound.playSound(mSound.getSoundIDRightAnswer(), VOL_GAME);
             mPoints += 100;
             mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));
         } else {
             mLevel.setCurrentFieldValue(mIndex, "WRONG");
-            mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+            mIcon.setImageResource(R.drawable.ic_clear_accent);
             wrongCounter();
             mSound.playSound(mSound.getSoundIDWrongAnswer(), VOL_GAME);
         }
@@ -627,7 +627,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -651,7 +651,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -675,7 +675,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -700,7 +700,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -724,7 +724,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -749,7 +749,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -774,7 +774,7 @@ public class GameActivity extends AppCompatActivity{
                 } else {
                     mSound.playSound(mSound.getSoundIDExercise(), VOL_GAME);
                 }
-                mIcon.setImageResource(R.drawable.ic_audiotrack_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_music_note_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -795,7 +795,7 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case "LADDER":
                 mSound.playSound(mSound.getSoundIDLadder(), VOL_GAME);
-                mIcon.setImageResource(R.drawable.ic_arrow_upward_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_arrow_upward_accent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -815,7 +815,7 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case "DOOR":
                 mSound.playSound(mSound.getSoundIDDoor(), VOL_GAME);
-                mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_lock_accent);
                 mIcon.startAnimation(mAnimationBlinking);
                 mVibrator.vibrate(100);
                 mClickID = 0;
@@ -838,7 +838,7 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case "DOOR_LOCKED":
                 mSound.playSound(mSound.getSoundIDDoor(), VOL_GAME);
-                mIcon.setImageResource(R.drawable.ic_lock_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_lock_accent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -854,7 +854,7 @@ public class GameActivity extends AppCompatActivity{
                 fieldCounter();
                 break;
             case "DOOR_UNLOCKED":
-                mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_lock_open_accent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -866,7 +866,7 @@ public class GameActivity extends AppCompatActivity{
                 fieldCounter();
                 break;
             case "CORRECT":
-                mIcon.setImageResource(R.drawable.ic_event_available_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_done_accent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -878,7 +878,7 @@ public class GameActivity extends AppCompatActivity{
                 fieldCounter();
                 break;
             case "WRONG":
-                mIcon.setImageResource(R.drawable.ic_event_busy_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_clear_accent);
                 mIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -909,6 +909,7 @@ public class GameActivity extends AppCompatActivity{
                 });
                 if(checkForLadder()) {
                     mSound.playSound(mSound.getSoundIDLadderDown(), VOL_GAME);
+                    mIcon.setImageResource(R.drawable.ic_arrow_downward_accent);
                 }
                 fieldCounter();
                 break;
@@ -1252,7 +1253,7 @@ public class GameActivity extends AppCompatActivity{
     public void onUserDismissedDialog() {
         if(mPoints > mTempPoints) {
             if(mDoorID == 2) {
-                mIcon.setImageResource(R.drawable.ic_lock_open_black_48dp);
+                mIcon.setImageResource(R.drawable.ic_lock_open_accent);
                 mLevel.setCurrentFieldValue(mIndex, "DOOR_UNLOCKED");
                 mPoints += 500;
                 mScoreTextView.setText(String.format(Locale.getDefault(),"%d", mPoints));

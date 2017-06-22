@@ -31,11 +31,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -46,6 +47,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/steps_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton"
@@ -69,11 +71,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -84,6 +87,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/exercise_field_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton2"
@@ -107,11 +111,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -122,6 +127,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/right_answer_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton3"
@@ -145,11 +151,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -160,6 +167,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/wrong_answer_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton4"
@@ -183,11 +191,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -198,6 +207,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/hitting_a_wall_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton5"
@@ -221,11 +231,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -236,6 +247,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/ladder_up_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton6"
@@ -259,11 +271,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -274,6 +287,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/ladder_down_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton7"
@@ -297,11 +311,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorAccent"
+                android:scaleType="fitCenter"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_play_circle_fill_black_48dp"
+                app:srcCompat="@drawable/ic_play_circle_background"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -312,6 +327,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/door_text"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/imageButton8"

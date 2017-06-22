@@ -31,6 +31,7 @@
             android:padding="16dp"
             android:text="The goal of the game is to get as many points as you can by answering the questions. There is a time limit on each level, so you have to reach the goal within this time, or else it's gameover. To navigate through the levels, use the arrow buttons. When you stumble upon a Question, tap the note in the middle of the screen to hear it and then choose your answer. You only have one chance per question. If you are short on time you can of course skip questions and hurry to the finish line. If you hit a door you have to answer three random questions correctly in order to crack the lock. When answered incorrectly the door will be locked forever. In the main menu you can choose GAMESOUNDS to hear all the sounds and get to know them. You can also toggle the switch to play in TUTORIAL MODE. In this mode there is no time limit, so you can explore the levels at your own pace, however in this mode you can't set a new highscore."
             android:textAlignment="center"
+            android:textColor="@android:color/background_light"
             android:textSize="20sp"
             app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintLeft_toLeftOf="parent"
